@@ -1,0 +1,207 @@
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;700&display=swap');
+@import url("https://use.typekit.net/hkx4eig.css");
+
+$bg-black: #37373A;
+$bg-gray: #515457;
+$accent: #FFE799;
+$secondary: #BBBBBB;
+$main: white;
+
+body {
+    background-color: $bg-black;
+    color: $main;
+    font-size: 16px;
+}
+
+html, div {
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Noto Sans","Noto Sans JP", "Noto Sans Japanese",  "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: $main;
+    line-height: 20px;
+}
+
+%container {
+    width: min(92%, 1200px);
+    margin: auto;
+}
+.material-icons {
+    vertical-align: middle;
+}
+
+$header-height: 72px;
+$section-padding: 30px ;
+.section-container {
+    // header height
+    padding-top: $header-height;
+    // overflow: auto;
+    // scroll-snap-type: y mandatory;
+    // height: 100vh;
+}
+
+%flex {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section--top {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    padding: $section-padding + $header-height 0;
+    
+    &__heading {
+        padding-top: $section-padding + $header-height;
+        margin-top: -$header-height;
+        padding-bottom: 32px;
+        @extend .heading
+    }
+
+    // 100vh だとめっちゃずれるし、padding分も引けないし悩むー
+    // &__inner-content {
+    //     @extend %flex;
+    //     &--column {
+    //         @extend %flex;
+    //         flex-direction: column;
+    //     }
+    // }
+}
+
+.heading {
+    font-family:  transat-text, mr-eaves-modern, poppins,"ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    text-align: center;
+    font-weight: normal;
+    
+    &--sub {
+        @extend .heading;
+        font-size: 22px;
+        font-weight: normal;
+    }
+}
+
+.container {
+    @extend %container;
+
+    &--about {
+        @extend %container;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        // align-items: center;
+    }
+}
+
+/* button */
+
+.btn {
+    cursor: pointer;
+    // テキスト付きボタン
+    &--text {
+        cursor: pointer;
+        & span {
+            margin-right: 4px;
+        }
+        & .material-icons {
+            font-size: 16px;
+            padding-bottom: 4px;
+        }
+    }
+}
+
+/* each work page */
+.section-container--work-item {
+    // @extend %container;
+    font-size: 14px;
+    padding: $section-padding + $header-height 0;
+
+    // 一番下のナビゲーションボタン
+    &__btns {
+        text-align: center;
+        position: relative;
+    }
+
+}
+.container-btns {
+    &__home {
+        position: relative;
+        display: inline-block;
+    }
+    &__next {
+        position: absolute;
+        display: inline-block;
+        bottom: 8px;
+    }
+}
+.section--imgtext {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(45px, 6vw, 80px);
+
+    &__img {
+        flex: 1;
+    }
+    &__text {
+        flex: 1;
+    }
+}
+
+.section--slide {
+    padding: $section-padding 0;
+    // height: 100vh;
+
+    &__heading {
+        justify-content: center;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// スライド部分
+%slider {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow-x: hidden;
+}
+%slider-buttons {
+    position: absolute;
+    z-index: 150;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    
+    & button {
+        width: 40px;
+        cursor: pointer;
+    }
+
+}
+// 一つ目のスライドは表示
+.s1 {
+    transform: translateX(0);
+}
+
+// transition
+.page-enter-from, .page-leave-to {
+    opacity: 0;
+}
+.page-enter-active, .page-leave-active {
+    transition: all 0.5s;
+}
+
+@media (max-width: 744px) {
+
+}

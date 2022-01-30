@@ -1,0 +1,133 @@
+@charset "UTF-8";
+@import url("https://use.typekit.net/hkx4eig.css");
+body {
+  background-color: #37373A;
+  color: white;
+  font-size: 16px;
+}
+
+html, div {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Noto Sans", "Noto Sans JP", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  line-height: 20px;
+}
+
+.container--about, .container {
+  width: min(92%, 1200px);
+  margin: auto;
+}
+
+.material-icons {
+  vertical-align: middle;
+}
+
+.section-container {
+  padding-top: 72px;
+}
+
+.section--top {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  padding: 102px 0;
+}
+.section--top__heading {
+  padding-top: 102px;
+  margin-top: -72px;
+  padding-bottom: 32px;
+}
+
+.heading, .heading--sub, .section--top__heading {
+  font-family: transat-text, mr-eaves-modern, poppins, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  text-align: center;
+  font-weight: normal;
+}
+.heading--sub {
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.container--about {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+/* button */
+.btn {
+  cursor: pointer;
+}
+.btn--text {
+  cursor: pointer;
+}
+.btn--text span {
+  margin-right: 4px;
+}
+.btn--text .material-icons {
+  font-size: 16px;
+  padding-bottom: 4px;
+}
+
+/* each work page */
+.section-container--work-item {
+  font-size: 14px;
+  padding: 102px 0;
+}
+.section-container--work-item__btns {
+  text-align: center;
+  position: relative;
+}
+
+.container-btns__home {
+  position: relative;
+  display: inline-block;
+}
+.container-btns__next {
+  position: absolute;
+  display: inline-block;
+  bottom: 8px;
+}
+
+.section--imgtext {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(45px, 6vw, 80px);
+}
+.section--imgtext__img {
+  flex: 1;
+}
+.section--imgtext__text {
+  flex: 1;
+}
+
+.section--slide {
+  padding: 30px 0;
+}
+.section--slide__heading {
+  justify-content: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.s1 {
+  transform: translateX(0);
+}
+
+.page-enter-from, .page-leave-to {
+  opacity: 0;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: all 0.5s;
+}
+/*# sourceMappingURL=main.css.map */
