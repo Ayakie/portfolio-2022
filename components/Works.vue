@@ -73,24 +73,23 @@ onMounted(() => {
     if (process.client) {
         gsap.registerPlugin(ScrollTrigger)
     }
-    nextTick(() => {
-
-        console.log('mounted top')
-        scrollLists();
-        ScrollTrigger.getById("horizontal-scroll").enable();
-        console.log('updated')
-    })
+    console.log('mounted top')
+    setTimeout(() => {
+        scrollLists()
+    }, 1000)
 })
 
-onUnmounted(() => {
+// const route = useRoute()
+// watch(
+//     route.params,
+//     () => scrollLists()
+// )
+
+onBeforeUnmount(() => {
     ScrollTrigger.getById("horizontal-scroll").disable()
     console.log('unmount')
 })
 
-
-</script>
-
-<script>
 
 </script>
 
