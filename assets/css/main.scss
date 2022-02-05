@@ -12,6 +12,11 @@ body {
     background-color: $bg-black;
     color: $main;
     font-size: 16px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 
 html, div {
@@ -42,8 +47,8 @@ $section-padding: 30px ;
     // header height
     padding-top: $header-height;
     overflow-x: hidden;
-    // overflow: auto;
-    // scroll-snap-type: y mandatory;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
     // height: 100vh;
 }
 
@@ -159,7 +164,7 @@ $v-margin-16: 16px;
     align-items: center;
     justify-content: center;
     gap: clamp(45px, 6vw, 80px);
-    padding-left: $section-padding;
+    padding-left: clamp(40px, 6vw, 80px);
     
     &__img {
         flex: 1;
