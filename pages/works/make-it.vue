@@ -13,17 +13,17 @@ onMounted(() => {
     if (process.client) {
         gsap.registerPlugin(ScrollTrigger)
     }
-    nextTick(() => {
+    setTimeout(() => {
         useSlider('.buttons__next--process', '.buttons__prev--process', '.process-wrapper__slide-item', '.process-wrapper')
         useSlider('.buttons__next--features', '.buttons__prev--features', '.features-wrapper__slide-item', '.features-wrapper')
-    })
+    }, 1000)
 })
 
 </script>
 <template>
     <div class="section-container--work-item">
         <section class="section--imgtext">
-            <div class="section--imgtext__img block-img">
+            <div class="section--imgtext__img">
                 <h1 class="img__title">Make It</h1>
                 <div>
                     <img src="@/assets/img/make-it/make-it-2.png" alt="">
@@ -38,17 +38,27 @@ onMounted(() => {
                     <p>
                         目標を達成することは難しい。
                         「目標達成するには」をテーマにした自己啓発本ではみんな口を揃えてこう言う。
-                    </p>
-                    <p>
                         <ul>
                             <li>漠然とした目標ではなく具体的な目標にすること</li>
                             <li>目標を達成した時の自分を想像すること</li>
                             <li>まずは達成しやすい簡単なステップに細分化すること</li>
                         </ul>
                     </p>
-                    <p>わかっている。でもできない。なぜ？<br>そもそも行動する前に、目標の細分化だの、自分でやること多すぎない？</p>
+                    <p>わかっている。でもできない。なぜ？</p>
+                    <p>そもそも行動する前に、目標の細分化など、自分で設定し可視化すべき項目が多いのではないか？</p>
                     <p>Make It は、そんなペインを手助けするために生まれました。</p>
                 </div>
+                <div>
+                    <h3>名前の由来</h3>
+                    <ul>
+                        <li>小さなステップとしてのタスクを気軽に「Make」する = 作る</li>
+                        <li>目標達成を「Make It」する = 間に合わせる</li>
+                    </ul>
+                    <p>
+                        2つの意味を込め、アプリ名は「Make It」と名づけました。
+                    </p>
+                </div>
+                
             </div>
         </section>
 
@@ -73,8 +83,8 @@ onMounted(() => {
                 <Process class="process-wrapper__slide-item s1">
                     <template #title>戦略 / 要件の設定</template>
                     <template #description>
-                        <p>課題感（Pain）を起点に既存サービスの問題点（Competition）を挙げ、本アプリにて達成したいことを明確にします。<br>
-                        OOUIの考え方に基づき、タスクからオブジェクトを洗い出し、インタラクションモデルを構想しました。</p>
+                        <!-- <p>課題感（Pain）を起点に既存サービスの問題点（Competition）を挙げ、本アプリにて達成したいことを明確にします。<br>
+                        OOUIの考え方に基づき、タスクからオブジェクトを洗い出し、インタラクションモデルを構想しました。</p> -->
                         <!-- 2カラム -->
                         <div class="strategy-container">
                             <div class="strategy-container__column">
@@ -105,7 +115,8 @@ onMounted(() => {
                         </div>
                     </template>
                     <template #imgs>
-                        <img src="@/assets/img/make-it/make-it-model.png" alt="">
+                        <img class="imgs-container__img--model" src="@/assets/img/make-it/model.png" alt="">
+                        <figcaption>OOUIの考え方に基づき、タスクからオブジェクトを洗い出し、インタラクションモデルを構想</figcaption>
                     </template>
                 </Process>
                 <Process class="process-wrapper__slide-item">
@@ -115,6 +126,7 @@ onMounted(() => {
                     </template>
                     <template #imgs>
                         <img class="imgs-container__img" src="@/assets/img/make-it/wireframe.png" alt="">
+                        <figcaption>使用ツール：procreate</figcaption>
                     </template>
                     <template></template>
                 </Process>
@@ -124,7 +136,7 @@ onMounted(() => {
                         <p>目標達成に向けポジティブな気持ちになれるようなオレンジをアクセントカラーに決定。<br>
                             アクセント カラーを生かす補色をメインカラーにし、
                             背景色は優しい印象となるグレーを選択しました。<br>
-                            また、イラストには遊び心のある SASHIE を起用させていただきました。</p>
+                            また、イラストには遊び心のある <a href="https://sashie.org/" target="_blank">SASHIE</a> さんを起用させていただきました。</p>
                     </template>
                     <template #imgs>
                         <img class="imgs-container__img--color" src="@/assets/img/make-it/color.png" alt="">
@@ -138,15 +150,25 @@ onMounted(() => {
                     </template>
                     <template #imgs>
                         <img class="imgs-container__img" src="@/assets/img/make-it/ui.png" alt="">
+                        <figcaption>使用ツール：Figma(左) Keynote（右）</figcaption>
                     </template>
                 </Process>
                 <Process class="process-wrapper__slide-item">
                     <template #title>実装と検証</template>
                     <template #description>
-                        <p></p>
+                        <p>FigmaのUIカンプを基に実装を進めていきます。<br>
+                        ２週間ほどでα版アプリをデプロイ後、SNSでアプリ利用者を集い、実際に使っていただきました。<br>
+                        ユーザーから使用感や改善点を聞き、機能やUIの改良を加えるというサイクルを繰り返しました。</p>
+                        <h3>改善点（一部）</h3>
+                            <ul>
+                                <li>タスクの「登録する」ボタンの色をグレーのボーダーからアクセントカラーに変更</li>
+                                <li>URLを登録したいという要望に応えるため、メモ入力の方法をmarkdown方式に変更</li>
+                                <li>タスクの並び順を、作成日ではなく完了予定日に変更</li>
+                            </ul>
+                        
                     </template>
                     <template #imgs>
-                        <img class="imgs-container__img" src="@/assets/img/make-it/wireframe.png" alt="">
+                        <img class="imgs-container__img--process" src="@/assets/img/make-it/process.png" alt="">
                     </template>
                 </Process>
             </div>
@@ -172,7 +194,7 @@ onMounted(() => {
                 </div>
                 <!-- スライドx5 -->
                 <Process class="features-wrapper__slide-item s1">
-                    <template #title>残り時間のカウントダウン</template>
+                    <template #title>目標達成への意欲をかき立てるメインビジュアル</template>
                     <template #description>
                         <p>目標達成宣言をメインビジュアルに設定しました。「願望」ではなく「結果」を宣言することがポイントです。<br>
                         また、目標達成予定日までのカウントダウン表示することで、<br>
@@ -198,7 +220,7 @@ onMounted(() => {
                         <p>という、今やるべきタスクまでブレークダウンできるような動線を設計しました。</p>
                     </template>
                     <template #imgs>
-                        <img class="imgs-container__img" src="@/assets/img/make-it/breakdown.png" alt="">
+                        <img class="imgs-container__img--breakdown" src="@/assets/img/make-it/breakdown.png" alt="">
                     </template>
                 </Process>
                 <Process class="features-wrapper__slide-item">
@@ -207,7 +229,7 @@ onMounted(() => {
                         <p>モチベーション維持には、「自分はちゃんと日々前に進んでいる！」という感覚を持つ必要があります。<br>
                         完了したタスクはカレンダーコンポーネントと連動させ、色を赤→緑に変化させることで、日々の努力を可視化しました。<br>
                         </p>
-                        <p>なお、このカレンダー コンポーネントだけ、外部ライブラリを使用させていただきました。</p>
+                        <p>なお、このカレンダー コンポーネントだけ、<a href="https://vcalendar.io/" target="_blank">外部ライブラリ</a>を使用させていただきました。</p>
                     </template>
                     <template #imgs>
                         <img class="imgs-container__img--calender" src="@/assets/img/make-it/calender.png" alt="">
@@ -224,18 +246,18 @@ onMounted(() => {
                         </p>
                     </template>
                     <template #imgs>
-                        <img class="imgs-container__img" src="@/assets/img/make-it/tags.png" alt="">
+                        <img class="imgs-container__img--tags" src="@/assets/img/make-it/tags.png" alt="">
                     </template>
                 </Process>
                 <Process class="features-wrapper__slide-item">
                     <template #title>おまけ</template>
                     <template #description>
                         <p>SASHIEさんのユニークなイラストに惹かれたので、404ページで遊んでみました。<br>
-                        Make-It に何回か適当な文字列をつけてアクセスしてみてください。
+                        <a href="https://dragonash-257b7.web.app/" target="_blank">Make It</a> の URL 末尾に適当な文字列をつけ、何回かアクセスしてみてください。
                         </p>
                     </template>
                     <template #imgs>
-                        <img class="imgs-container__img" src="@/assets/img/make-it/404.png" alt="">
+                        <img class="imgs-container__img--404" src="@/assets/img/make-it/404.png" alt="">
                     </template>
                 </Process>
 
@@ -255,35 +277,35 @@ onMounted(() => {
             <p>ここでの学びをさらに発展させ、続くアプリ「 Keep It 」を作りました。ぜひご覧ください。</p>
         </section>
 
-        <div class="section-container--work-item__btns container-btns">
+        <div class="container-btns">
             <NuxtLink to="/">
                 <Button class="container-btns__home"></Button>
             </NuxtLink>
-            <NextButton class="container-btns__next"></NextButton>
+            <NuxtLink to="/works/keep-it">
+                <NextButton class="container-btns__next">Keep It をみる</NextButton>
+            </NuxtLink>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
 @use '@/assets/css/main';
-.block-img {
-    &__title {
-        text-align: center;
-        margin: 24px auto;
-    }
-}
-p {
-    margin: 16px auto;
-}
-h1 {
-    text-align: center;
-}
-.process-wrapper, .features-wrapper {
-    @extend %slider;
+// scopedごとに定義でOK
+.process-wrapper {
+    @extend %slider-wrapper;
     &__buttons {
         @extend %slider-buttons;
     }
 }
+ .features-wrapper {
+    @extend %slider-wrapper;
+    height: 530px;
+    &__buttons {
+        @extend %slider-buttons;
+    }
+}
+
+// scopedごとに定義でOK
 .strategy-container {
     display: flex;
     justify-content: space-between;
@@ -291,27 +313,36 @@ h1 {
     width: 100%;
 
     &__column {
-        width: 40%;
+        width: 47%;
+    }
+    & h3 {
+        text-align: center;
     }
 }
 
 // scopedにしてるのでProcess.vueのスタイルは適用されない
+// このスタイリングで良いか要検討
+// keep-itでも使いまわせるか
 .imgs-container {
     &__img {
         max-height: 450px;
 
-        &--color, &--calender {
-            max-height: 250px;
+        &--model {
+            max-width: 80%;
         }
-    }
-}
-.section--post-script {
-    &__sub-title {
-        font-size: 20px;
-    }
-    & p {
-        text-align: center;
-        font-weight: 200;
+
+        &--color, &--calender {
+            max-height: 300px;
+        }
+        &--tags, &--breakdown {
+            max-width: 900px;
+        }
+        &--process {
+            width: 60%;
+        }
+        &--404 {
+            max-height: 380px;
+        }
     }
 }
 </style>

@@ -6,6 +6,7 @@ $bg-gray: #515457;
 $accent: #FFE799;
 $secondary: #BBBBBB;
 $main: white;
+$v-space: clamp(60px, 6vw, 90px);
 
 body {
     background-color: $bg-black;
@@ -30,12 +31,17 @@ a {
 .material-icons {
     vertical-align: middle;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 $header-height: 72px;
 $section-padding: 30px ;
 .section-container {
     // header height
     padding-top: $header-height;
+    overflow-x: hidden;
     // overflow: auto;
     // scroll-snap-type: y mandatory;
     // height: 100vh;
@@ -91,8 +97,6 @@ $section-padding: 30px ;
         @extend %container;
         display: flex;
         justify-content: space-around;
-        flex-direction: row;
-        // align-items: center;
     }
 }
 
@@ -100,7 +104,7 @@ $section-padding: 30px ;
 
 .btn {
     cursor: pointer;
-    // テキスト付きボタン
+    // icon+テキスト付きボタン
     &--text {
         cursor: pointer;
         & span {
@@ -114,19 +118,30 @@ $section-padding: 30px ;
 }
 
 /* each work page */
+$v-margin-16: 16px;
 .section-container--work-item {
     // @extend %container;
     font-size: 14px;
     padding: $section-padding + $header-height 0;
 
-    // 一番下のナビゲーションボタン
-    &__btns {
-        text-align: center;
-        position: relative;
+    & p {
+        margin: $v-margin-16 auto;
     }
-
+    & h1 {
+        text-align: center;
+    }
+    & h3 {
+        color: $secondary;
+        margin-bottom: $v-margin-16;
+    }
 }
+
+// 一番下のナビゲーションボタン
 .container-btns {
+    text-align: center;
+    position: relative;
+    margin-top: $header-height;
+    
     &__home {
         position: relative;
         display: inline-block;
@@ -137,40 +152,46 @@ $section-padding: 30px ;
         bottom: 8px;
     }
 }
+// background & top image
 .section--imgtext {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
     gap: clamp(45px, 6vw, 80px);
-
+    padding-left: $section-padding;
+    
     &__img {
         flex: 1;
     }
     &__text {
         flex: 1;
     }
-}
 
-.section--slide {
-    padding: $section-padding 0;
-    // height: 100vh;
-
-    &__heading {
-        justify-content: center;
+    & h3 {
+        padding-top: $v-margin-16;
     }
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+.section--slide {
+    margin: $v-space 0;
+    overflow-x: hidden;
+    // height: 100vh;
+    
+    &__heading {
+        justify-content: center;
+        margin-bottom: 24px;
+    }
+    & a {
+        color: $secondary;
+    }
 }
 
-// スライド部分
-%slider {
+/* slider */
+%slider-wrapper {
     position: relative;
     width: 100%;
-    height: 700px;
+    height: clamp(600px, 50vw, 670px);
     overflow-x: hidden;
 }
 %slider-buttons {
@@ -189,12 +210,23 @@ img {
     }
 
 }
-// 一つ目のスライドは表示
+/* 1つ目のスライドは表示 */
 .s1 {
     transform: translateX(0);
 }
 
-// transition
+/* post script */
+.section--post-script {
+    &__sub-title {
+        font-size: 20px;
+    }
+    & p {
+        text-align: center;
+        font-weight: 200;
+    }
+}
+
+/* page transition */
 .page-enter-from, .page-leave-to {
     opacity: 0;
 }
