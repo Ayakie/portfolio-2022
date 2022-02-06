@@ -7,19 +7,21 @@
         <slot name="img-url"></slot>
     </div>
     <div class="list-item__title">
-        <h3><slot name="title"></slot></h3>
-        <slot name="link"></slot>
+        <slot name="title"></slot>
     </div>
-    <p class="list-item__description">
-        <slot name="description"></slot>
-    </p>
-    <p class="list-item__period">
-        <slot name="period"></slot>
-    </p>
-    <div class="list-item__icons">
-        <slot name="icons"></slot>
+    <div class="item-body">
+        <p class="item-body__description">
+            <slot name="description"></slot>
+        </p>
+        
+        <p class="item-body__period">
+            <slot name="period"></slot>
+        </p>
+        <div class="item-body__icons">
+            <slot name="icons"></slot>
+        </div>
     </div>
-    <div class="list-item__btn">
+    <div class="list-item__btns">
         <div class="btn--text">
             <slot name="more"></slot>
         </div>
@@ -39,7 +41,7 @@
 
 .list-item {
     width: 500px;
-    height: 640px;
+    // height: 640px;
 
     &__card {
         width: 100%;
@@ -63,17 +65,30 @@
 
         & .material-icons {
             font-size: 23px;
+            padding-bottom: 4px;
+            margin-left: 4px;
         }
     }
 
+    &__btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+    }
+}
+.item-body {
+
     &__description {
-        margin-bottom: 16px;
+        margin-bottom: main.$v-margin-16;
+        height: 50px;
     }
 
     &__period {
         font-size: 0.8rem;
         font-weight: 300;
-        margin-bottom: 16px;
+        margin-bottom: main.$v-margin-16;
         &::before{
             font-family: 'Material Icons';
             content:'\e8b5';
@@ -90,12 +105,5 @@
         }
     }
 
-    &__btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-
-    }
 }
 </style>

@@ -25,7 +25,7 @@ const workItems = [
         github: 'https://github.com/Ayakie/keep-it'
     },
     {
-        img: '/assets/img/service-sympo.png',
+        img: '/assets/img/top/service-sympo.png',
         title: 'My Portfolio（This Site）',
         link: '',
         description: '「月夜」をテーマに作成',
@@ -35,10 +35,10 @@ const workItems = [
         github: 'https://github.com/Ayakie/make-it'
     },
     {
-        img: '/assets/img/service-sympo.png',
+        img: '/assets/img/top/service-sympo.png',
         title: '大学院 シンポジウム 特設 Web サイト',
         link: 'https://www.sk.tsukuba.ac.jp/~msesympo/2020/',
-        description: '筑波大学サービス工学学位プログラムにおける、外部向け研究発表シンポジウムがオンライン開催となったのに伴い、特設Webサイトを作成',
+        description: '2020年度筑波大学サービス工学シンポジウム（外部向け研究発表会）の特設Webサイトを作成',
         period: 'Jan 2021（1 month）',
         icons: ['devicon-html5-plain colored', 'devicon-css3-plain colored', "devicon-jquery-plain-wordmark", 'devicon-php-plain colored'],
         more: '',
@@ -47,25 +47,21 @@ const workItems = [
 
     ]
 const scrollLists = () => {
-    
+    const listWrapperEl = document.querySelector('.wrapper__scroll-list')
+
     gsap.to(".scroll-list", {
-        xPercent: -100,
+        xPercent: -60,
         ease: 'none',
         scrollTrigger: {
             trigger: '#section--works',
-            start: '20% 114px',
-            end:  '+=' + document.querySelector(".scroll-list").offsetWidth + '+=400',
-            scrub: 1,
-            // pin: true,
-            // markers: true
-            // id: "horizontal-scroll"
+            start: 'top top',
+            // end:  '+=' + listWrapperEl.offsetWidth,
+            scrub: 1.5,
+            pin: true,
+            markers: true,
+            id: "horizontal-scroll",
+            invalidateOnRefresh: true,
         }
-    })
-    ScrollTrigger.create({
-        trigger: '#section--works',
-        pin: true,
-        markers: true,
-        id: "horizontal-scroll"
     })
 }
 
@@ -78,12 +74,6 @@ onMounted(() => {
         scrollLists()
     }, 1000)
 })
-
-// const route = useRoute()
-// watch(
-//     route.params,
-//     () => scrollLists()
-// )
 
 onBeforeUnmount(() => {
     ScrollTrigger.getById("horizontal-scroll").disable()
@@ -107,9 +97,11 @@ onBeforeUnmount(() => {
                             <template #img-url>
                                 <img :src="item.img" alt="">
                             </template>
-                            <template #title>{{ item.title }}</template>
-                            <template #link>
-                                <a :href="item.link" target="_blank"><span class="material-icons" v-if="item.link">open_in_new</span></a>
+                            <template #title>
+                                <a :href="item.link" target="_blank">
+                                    <h3>{{ item.title }}</h3>
+                                    <span class="material-icons" v-if="item.link">open_in_new</span>
+                                </a>
                             </template>
                             <template #description> {{ item.description }} </template>
                             <template #period> {{ item.period }} </template>
@@ -140,13 +132,14 @@ onBeforeUnmount(() => {
 .wrapper {
     width: 100%;
     position: relative;
-    height: 700px;
+    // height: 700px;
 
     &__scroll-list {
         position: absolute;
         display: flex;
         top: 0;
         left: 0;
+        padding: 0 40px;
     }
 }
 </style>

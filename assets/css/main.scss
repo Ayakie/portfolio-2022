@@ -7,6 +7,10 @@ $accent: #FFE799;
 $secondary: #BBBBBB;
 $main: white;
 $v-space: clamp(60px, 6vw, 90px);
+$font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Noto Sans","Noto Sans JP", "Noto Sans Japanese",  "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+$v-margin-16: 1rem;
+$header-height: 72px;
+$section-padding: 30px ;
 
 body {
     background-color: $bg-black;
@@ -20,7 +24,7 @@ body::-webkit-scrollbar {
 }
 
 html, div {
-    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Noto Sans","Noto Sans JP", "Noto Sans Japanese",  "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    font-family: $font-family;
 }
 
 a {
@@ -41,8 +45,7 @@ img {
     height: auto;
 }
 
-$header-height: 72px;
-$section-padding: 30px ;
+
 .section-container {
     // header height
     padding-top: $header-height;
@@ -67,18 +70,9 @@ $section-padding: 30px ;
     &__heading {
         padding-top: $section-padding + $header-height;
         margin-top: -$header-height;
-        padding-bottom: 32px;
+        padding-bottom: $v-space;
         @extend .heading
     }
-
-    // 100vh だとめっちゃずれるし、padding分も引けないし悩むー
-    // &__inner-content {
-    //     @extend %flex;
-    //     &--column {
-    //         @extend %flex;
-    //         flex-direction: column;
-    //     }
-    // }
 }
 
 .heading {
@@ -123,7 +117,7 @@ $section-padding: 30px ;
 }
 
 /* each work page */
-$v-margin-16: 16px;
+
 .section-container--work-item {
     // @extend %container;
     font-size: 14px;
@@ -151,7 +145,7 @@ $v-margin-16: 16px;
         position: relative;
         display: inline-block;
     }
-    &__next {
+    &__next, &__prev {
         position: absolute;
         display: inline-block;
         bottom: 8px;
