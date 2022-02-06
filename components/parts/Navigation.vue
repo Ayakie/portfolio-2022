@@ -38,7 +38,7 @@ const handleClick = (val) => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: auto;
+    margin: main.$v-margin-16 auto;
 }
 
 .circle-wrapper {

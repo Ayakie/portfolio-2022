@@ -13,14 +13,25 @@ const changePage = (val) => {
     console.log(val)
 }
 
-const title = computed(() => {
+const currentComponent = computed(() => {
+    let componentValue = {}
+
     if (show.value === 'overview') {
-        return 'Overview'
+
+        componentValue['title'] = 'Overview'
+        componentValue['content'] = Overview
+
     } else if (show.value === 'bio') {
-        return 'Bio'
+
+        componentValue['title'] = 'Bio'
+        componentValue['content'] = Bio
+
     } else if (show.value === 'value') {
-        return 'My Value'
+
+        componentValue['title'] = 'My Value'
+        componentValue['content'] = Value
     }
+    return componentValue
 })
 
 </script>
@@ -37,16 +48,18 @@ const title = computed(() => {
         <div class="section--top__inner-content">
             <div class="container--about">
                 <div class="block">
-                    <div class="circle"></div>
+                    <div class="circle">
+                        <img class="circle__img--black" src="@/assets/img/top/me-black.svg" alt="">
+                        <img class="circle__img--color" src="@/assets/img/top/me-color.png" alt="">
+                    </div>
                 </div>
                 <div class="block">
                     <div class="block__item">
-                        <h2 class="block__heading heading--sub"> {{ title }} </h2>
+                        <h2 class="block__heading heading--sub"> {{ currentComponent.title }} </h2>
                         <Navigation @change = "changePage"/>
-
-                        <Overview v-if="show === 'overview'"/>
-                        <Bio v-if="show === 'bio'"/>
-                        <Value v-if="show === 'value'"/>
+                        <transition name="about-fade" mode="out-in">
+                            <component :is="currentComponent.content"></component>
+                        </transition>
                     </div>
                 </div>
             </div>
@@ -54,7 +67,7 @@ const title = computed(() => {
     </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use '@/assets/css/main';
 .container--about {
     @extend %container;
@@ -62,18 +75,52 @@ const title = computed(() => {
     justify-content: space-around;
     flex-direction: row;
 }
+// 子のコンポーネントのルート要素に対して定義
+.container--navigation {
+    margin: main.$v-margin-16 auto;
+}
+
 $circle-width: 400px;
 $circle-width-mb: 280px;
 
+%img {
+    position: absolute;
+    bottom: 0;
+    height: 75%;
+    object-fit: cover;
+}
 .circle {
     width: $circle-width;
     height: $circle-width;
     border-radius: 50%;
-    background: main.$accent;
+    background: main.$secondary;
+    position: relative;
+    overflow: hidden;
+
+    &__img--color, &__img--black {
+        @extend %img;
+    }
+    &__img--color {
+        display: none;
+    }
 }
 
 .block {
     flex: 1;
+    & p {
+        margin-bottom: main.$v-margin-16;
+    }
+
+    &__item {
+        height: 100%;
+    }
+}
+
+.about-fade-enter-from, .about-fade-leave-to {
+    opacity: 0;
+}
+.about-fade-enter-active, .about-fade-leave-active {
+    transition: all 0.3s ease;
 }
 
 @media (max-width: 744px) {
