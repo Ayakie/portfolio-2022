@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import NextButton from '~~/components/parts/NextButton.vue';
 import Button from '~~/components/parts/Button.vue';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import PrevButton from '~~/components/parts/PrevButton.vue';
 
 onMounted(() => {
     console.log('mounted')
@@ -229,10 +230,13 @@ onMounted(() => {
         </section>
 
         <div class="container-btns">
+            <NuxtLink to="/works/make-it">
+                <PrevButton class="container-btns__prev"></PrevButton>
+            </NuxtLink>
             <NuxtLink to="/">
                 <Button class="container-btns__home"></Button>
             </NuxtLink>
-            <NuxtLink to="/works/portfolio">
+            <NuxtLink to="/">
                 <NextButton class="container-btns__next"></NextButton>
             </NuxtLink>
         </div>

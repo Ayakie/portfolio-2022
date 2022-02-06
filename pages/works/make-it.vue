@@ -5,6 +5,7 @@ import Process from './Process.vue';
 import { nextTick } from 'vue';
 import gsap from 'gsap';
 import NextButton from '~~/components/parts/NextButton.vue';
+import PrevButton from '~~/components/parts/PrevButton.vue';
 import Button from '~~/components/parts/Button.vue';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -150,7 +151,7 @@ onMounted(() => {
                     </template>
                     <template #imgs>
                         <img class="imgs-container__img" src="@/assets/img/make-it/ui.png" alt="">
-                        <figcaption>使用ツール：Figma(左) Keynote（右）</figcaption>
+                        <figcaption>使用ツール：Figma(左) / Keynote（右）</figcaption>
                     </template>
                 </Process>
                 <Process class="process-wrapper__slide-item">
@@ -279,6 +280,9 @@ onMounted(() => {
 
         <div class="container-btns">
             <NuxtLink to="/">
+                <PrevButton class="container-btns__prev">Keep It をみる</PrevButton>
+            </NuxtLink>
+            <NuxtLink to="/">
                 <Button class="container-btns__home"></Button>
             </NuxtLink>
             <NuxtLink to="/works/keep-it">
@@ -290,6 +294,13 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @use '@/assets/css/main';
+
+.container-btns {
+    &__prev {
+        visibility: hidden
+    }
+}
+
 // scopedごとに定義でOK
 .process-wrapper {
     @extend %slider-wrapper;

@@ -1,8 +1,6 @@
 <template>
-<div>
-    <div class="text">
-        <slot>See Next</slot>
-    </div>
+<div class="text">
+    <slot>See Next</slot>
 </div>
 </template>
 
