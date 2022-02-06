@@ -9,7 +9,7 @@ $main: white;
 $v-space: clamp(60px, 6vw, 90px);
 $font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Noto Sans","Noto Sans JP", "Noto Sans Japanese",  "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 $v-margin-16: 1rem;
-$header-height: 72px;
+$header-height: 24px;
 $section-padding: 30px ;
 
 body {
@@ -50,9 +50,6 @@ img {
     // header height
     padding-top: $header-height;
     overflow-x: hidden;
-    overflow: auto;
-    scroll-snap-type: y mandatory;
-    // height: 100vh;
 }
 
 %flex {
@@ -62,7 +59,8 @@ img {
     align-items: center;
 }
 
-.section--top {
+.section-top {
+    position: relative;
     scroll-snap-align: start;
     min-height: 100vh;
     padding: $section-padding + $header-height 0;
@@ -139,7 +137,7 @@ img {
 .container-btns {
     text-align: center;
     position: relative;
-    margin-top: $header-height;
+    margin-top: clamp(60px, 6vw, 90px);
     
     &__home {
         display: inline-block;
@@ -224,7 +222,7 @@ img {
     opacity: 0;
 }
 .page-enter-active, .page-leave-active {
-    transition: all 0.5s;
+    transition: all 0.3s ease-out;
 }
 
 @media (max-width: 744px) {

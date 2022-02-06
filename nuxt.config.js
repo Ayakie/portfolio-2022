@@ -15,6 +15,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: "https://use.typekit.net/hkx4eig.css"},
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' }
+    ],
+    script: [
+      { src: 'https://kit.fontawesome.com/58a9339a9a.js'}
     ]
   },
 
@@ -22,8 +25,9 @@ export default {
   css: [
     '~/node_modules/ress/ress.css',
     '~/node_modules/devicon/devicon.min.css',
+    '@fortawesome/fontawesome-free/css/all.min.css',
     '~/assets/css/main.css',
-    '~/assets/css/main.scss'
+    '~/assets/css/main.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -60,7 +64,6 @@ export default {
   },
   pageTransition: {
     name: 'page',
-    mode: 'in-out', // in first
     appear: true
   }
 }

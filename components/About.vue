@@ -37,15 +37,15 @@ const currentComponent = computed(() => {
 </script>
 
 <template>
-    <section class="section--top" id="section--about">
+    <section class="section-top" id="section--about">
         <transition
         appear
         @before-enter="beforeEnter"
         @enter="enter"
         >
-            <h1 class="section--top__heading">Hello. I am AKIE NAKAI.</h1>
+            <h1 class="section-top__heading">Hello. I am AKIE NAKAI.</h1>
         </transition>
-        <div class="section--top__inner-content">
+        <div class="section-top__inner-content">
             <div class="container--about">
                 <div class="block">
                     <div class="circle">

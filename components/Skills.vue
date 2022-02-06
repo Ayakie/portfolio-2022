@@ -3,7 +3,6 @@
     //  {name: '<img class="icon" src="https://cdn.jsdnameivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="56"/>', text: 'Figma'},
      {name: 'devicon-illustrator-line colored', text: 'Illustrator'},
      {name: 'devicon-photoshop-line colored', text: 'Photoshop'},
-     {name: 'devicon-xd-line colored', text: 'Adobe XD'}
  ])
 
  const front = ref([
@@ -25,8 +24,8 @@ const others = ref([
 
 </script>
 <template>
-    <section class="section--top" id="section--skills">
-        <h1 class="section--top__heading">
+    <section class="section-top" id="section--skills">
+        <h1 class="section-top__heading">
             Things I Can Do. I Love to Discuss and Shape Ideas.
         </h1>
         <!-- paddingの影響でずれる -->
@@ -57,7 +56,7 @@ const others = ref([
                         Others
                     </div>
                     <div class="row">
-                        <img class="icon" src="~/assets/img/communication.svg" width="56">Communication<br>Presentation
+                        <img class="icon" src="~/assets/img/top/communication.svg" width="56">Communication<br>Presentation
                     </div>
                     <div class="row" v-for="skill in others" :key="skill.text">
                         <i class="icon" :class="skill.name"></i>{{ skill.text }}
@@ -76,7 +75,7 @@ const others = ref([
 <style lang="scss" scoped>
 @use '@/assets/css/main';
 
-.section {
+.section-top {
     background: main.$bg-gray;
 }
 %__column {

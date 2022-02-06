@@ -84,10 +84,10 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <section class="section--top" id="section--works">
-        <h1 class="section--top__heading">Things I Created From Design.</h1>
+    <section class="section-top" id="section--works">
+        <h1 class="section-top__heading">Things I Created From Design.</h1>
 
-        <div class="section--top__inner-content">
+        <div class="section-top__inner-content">
 
             <!-- リスト -->
             <div class="wrapper">
@@ -100,7 +100,7 @@ onBeforeUnmount(() => {
                             <template #title>
                                 <a :href="item.link" target="_blank">
                                     <h3>{{ item.title }}</h3>
-                                    <span class="material-icons" v-if="item.link">open_in_new</span>
+                                    <span class="material-icons open" v-if="item.link">open_in_new</span>
                                 </a>
                             </template>
                             <template #description> {{ item.description }} </template>
@@ -129,6 +129,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style lang="scss" scoped>
+@use "@/assets/css/main";
 .wrapper {
     width: 100%;
     position: relative;
@@ -140,6 +141,16 @@ onBeforeUnmount(() => {
         top: 0;
         left: 0;
         padding: 0 40px;
+    }
+}
+.material-icons {
+    transition: all 0.3s;
+}
+a {
+    
+    &:hover .material-icons, &:hover .devicon-github-original {
+        color: main.$accent;
+        transform: translate(5%);
     }
 }
 </style>

@@ -106,4 +106,7 @@
     }
 
 }
+.item-list__title:hover + .material-icons.open {
+    color: main.$accent;
+}
 </style>
