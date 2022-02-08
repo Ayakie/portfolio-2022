@@ -4,10 +4,17 @@ body {
   background-color: #37373A;
   color: white;
   font-size: 16px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 html, div {
   font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Noto Sans", "Noto Sans JP", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -25,22 +32,28 @@ a {
   vertical-align: middle;
 }
 
-.section-container {
-  padding-top: 72px;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-.section--top {
+.section-container {
+  padding-top: 24px;
+  overflow-x: hidden;
+}
+
+.section-top {
+  position: relative;
   scroll-snap-align: start;
   min-height: 100vh;
-  padding: 102px 0;
+  padding: 54px 0;
 }
-.section--top__heading {
-  padding-top: 102px;
-  margin-top: -72px;
-  padding-bottom: 32px;
+.section-top__heading {
+  padding-top: 54px;
+  margin-top: -24px;
 }
 
-.heading, .heading--sub, .section--top__heading {
+.heading, .heading--sub, .section-top__heading {
   font-family: transat-text, mr-eaves-modern, poppins, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
   font-size: 32px;
   font-style: normal;
@@ -55,7 +68,6 @@ a {
 .container--about {
   display: flex;
   justify-content: space-around;
-  flex-direction: row;
 }
 
 /* button */
@@ -76,21 +88,26 @@ a {
 /* each work page */
 .section-container--work-item {
   font-size: 14px;
-  padding: 102px 0;
+  padding: 54px 0;
 }
-.section-container--work-item__btns {
+.section-container--work-item p {
+  margin: 1rem auto;
+}
+.section-container--work-item h1 {
   text-align: center;
-  position: relative;
+}
+.section-container--work-item h3 {
+  color: #BBBBBB;
+  margin-bottom: 1rem;
 }
 
-.container-btns__home {
+.container-btns {
+  text-align: center;
   position: relative;
-  display: inline-block;
+  margin-top: clamp(60px, 6vw, 90px);
 }
-.container-btns__next {
-  position: absolute;
+.container-btns__home {
   display: inline-block;
-  bottom: 8px;
 }
 
 .section--imgtext {
@@ -99,6 +116,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: clamp(45px, 6vw, 80px);
+  padding-left: clamp(40px, 6vw, 80px);
 }
 .section--imgtext__img {
   flex: 1;
@@ -106,28 +124,43 @@ a {
 .section--imgtext__text {
   flex: 1;
 }
+.section--imgtext h3 {
+  padding-top: 1rem;
+}
 
 .section--slide {
-  padding: 30px 0;
+  margin: clamp(60px, 6vw, 90px) 0;
+  overflow-x: hidden;
 }
 .section--slide__heading {
   justify-content: center;
+  margin-bottom: 24px;
+}
+.section--slide a {
+  color: #BBBBBB;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
+/* slider */
+/* 1つ目のスライドは表示 */
 .s1 {
   transform: translateX(0);
 }
 
+/* post script */
+.section--post-script__sub-title {
+  font-size: 20px;
+}
+.section--post-script p {
+  text-align: center;
+  font-weight: 200;
+}
+
+/* page transition */
 .page-enter-from, .page-leave-to {
   opacity: 0;
 }
 
 .page-enter-active, .page-leave-active {
-  transition: all 0.5s;
+  transition: all 0.3s ease-out;
 }
 /*# sourceMappingURL=main.css.map */

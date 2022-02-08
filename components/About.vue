@@ -67,7 +67,7 @@ const currentComponent = computed(() => {
     </section>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use '@/assets/css/main';
 .container--about {
     @extend %container;
@@ -121,6 +121,10 @@ $circle-width-mb: 280px;
 }
 .about-fade-enter-active, .about-fade-leave-active {
     transition: all 0.3s ease;
+}
+
+.section-top {
+    display: grid;
 }
 
 @media (max-width: 744px) {

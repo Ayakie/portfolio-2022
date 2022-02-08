@@ -7,7 +7,7 @@
 <style lang="scss" scoped>
 @use '@/assets/css/main';
 .btn {
-    padding: 20px 70px;
+    padding: 20px 60px;
     border: 1px solid main.$main;
     cursor: pointer;
 }

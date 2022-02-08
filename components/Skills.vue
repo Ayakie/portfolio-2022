@@ -77,6 +77,7 @@ const others = ref([
 
 .section-top {
     background: main.$bg-gray;
+    display: grid;
 }
 %__column {
     padding: 0 20px;

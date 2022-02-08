@@ -233,7 +233,7 @@ onMounted(() => {
             <NuxtLink to="/works/make-it">
                 <PrevButton class="container-btns__prev"></PrevButton>
             </NuxtLink>
-            <NuxtLink to="/">
+            <NuxtLink to="/#section--works">
                 <Button class="container-btns__home"></Button>
             </NuxtLink>
             <NuxtLink to="/">

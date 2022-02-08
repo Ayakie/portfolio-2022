@@ -1,21 +1,18 @@
 <script setup>
-// import gsap from 'gsap';
-// import ScrollTrigger from 'gsap/ScrollTrigger';
+</script>
 
-// if (process.client) {
-//   gsap.registerPlugin(ScrollTrigger)
-// }
+<script>
+export default {
+  pageTransition: "page"
+}
 
 </script>
 <template>
   <div>
-    <NuxtPage v-slot="{Component }">
-      <transition name="route" mode="out-in">
-        <component :is="Component"></component>
-        <!-- <NuxtPage/> -->
-      </transition>
-    </NuxtPage>
-  </div>
+    <NuxtLayout>
+      <NuxtPage/>
+    </NuxtLayout>
+</div>
 </template>
 
 <style>

@@ -282,7 +282,7 @@ onMounted(() => {
             <NuxtLink to="/">
                 <PrevButton class="container-btns__prev">Keep It をみる</PrevButton>
             </NuxtLink>
-            <NuxtLink to="/">
+            <NuxtLink to="/#section--works">
                 <Button class="container-btns__home"></Button>
             </NuxtLink>
             <NuxtLink to="/works/keep-it">

@@ -130,6 +130,11 @@ onBeforeUnmount(() => {
 
 <style lang="scss" scoped>
 @use "@/assets/css/main";
+
+.section-top__heading {
+    padding-bottom: clamp(60px, 6vw, 90px);
+}
+
 .wrapper {
     width: 100%;
     position: relative;
