@@ -12,7 +12,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
       <Works />
       <Contact />
     </div>
-    <Footer/>
   </div>
 </template>
 

@@ -25,6 +25,7 @@ body::-webkit-scrollbar {
 
 html, div {
     font-family: $font-family;
+    scroll-behavior: smooth;
 }
 
 a {

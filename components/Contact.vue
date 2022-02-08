@@ -5,21 +5,10 @@ const handleSubmit = () => {
 }
 </script>
 <template>
+<div>
     <section class="section-top" id="section--contact">
         <h1 class="section-top__heading">Feel Free to Get in Touch Me.</h1>
         <div class="section-top__inner-content">
-            <form class="form" @submit.prevent="handleSubmit" action="">
-
-                <div class="form__wrapper">
-                    <input class="form__name" v-model="name" type="text" placeholder="お名前" required>
-                    <input class="form__email" v-model="email" type="text" name="" id="" placeholder="メールアドレス" required>
-                </div>
-
-                <textarea class="form__content" v-model="content" placeholder="お問い合わせ内容" rows="1" required></textarea>
-                <button>
-                    <Button>送信する</Button>
-                </button>
-            </form>
             <div class="sns-icons">
                 <a href="https://www.linkedin.com/in/akienakai1023/" target="_blank" class="sns-icons__icon">
                     <i class="fab fa-linkedin-in"></i>
@@ -38,7 +27,9 @@ const handleSubmit = () => {
                 </a>
             </div>
         </div>
+    <Footer/>
     </section>
+</div>
 </template>
 
 <style lang="scss" scoped>
@@ -94,13 +85,13 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 
     &__icon {
-        font-size: 20px;
+        font-size: clamp(26px, 3.5vw, 45px);
         display: grid;
         place-items: center;
-        width: 36px;
+        width: clamp(45px, 6vw, 80px);
         aspect-ratio: 1 /1 ;
         background-color: main.$bg-black;
         border-radius: 50%;
