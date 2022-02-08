@@ -51,6 +51,7 @@ img {
 .section-top__heading {
   padding-top: 54px;
   margin-top: -24px;
+  padding-bottom: clamp(60px, 6vw, 90px);
 }
 
 .heading, .heading--sub, .section-top__heading {
