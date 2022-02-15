@@ -9,6 +9,7 @@ const workItems = [
         title: 'Make It',
         link: 'https://dragonash-257b7.web.app/',
         description: 'あなたの目標達成のためのタスク管理アプリ',
+        password: 'email: test@contoso.com / password: 123456 でログイン可能',
         period: 'Oct 2021（1 month）',
         icons: ['devicon-html5-plain colored', 'devicon-css3-plain colored', 'devicon-javascript-plain colored', 'devicon-vuejs-plain colored', 'devicon-firebase-plain colored'],
         more: 'make-it',
@@ -19,6 +20,7 @@ const workItems = [
         title: 'Keep It',
         link: 'https://dragonash-keep-it.web.app/',
         description: '残したいことを美しく記録するギャラリーサイトアプリ',
+        password: 'email: test@contoso.com / password: 123456 でログイン可能',
         period: 'Jan 2022（2 weeks）',
         icons: ['devicon-html5-plain colored', 'devicon-css3-plain colored', 'devicon-sass-original colored', 'devicon-javascript-plain colored', 'devicon-vuejs-plain colored', 'devicon-firebase-plain colored'],
         more: 'keep-it',
@@ -55,10 +57,10 @@ const scrollLists = () => {
         scrollTrigger: {
             trigger: '#section--works',
             start: 'top top',
-            // end:  '+=' + listWrapperEl.offsetWidth,
-            scrub: 1.5,
+            end:  () =>  `+=${listWrapperEl.offsetWidth}`,
+            scrub: 0.7,
             pin: true,
-            markers: true,
+            // markers: true,
             id: "horizontal-scroll",
             invalidateOnRefresh: true,
         }
@@ -66,10 +68,6 @@ const scrollLists = () => {
 }
 
 onMounted(() => {
-    if (process.client) {
-        gsap.registerPlugin(ScrollTrigger)
-    }
-    console.log('mounted top')
     setTimeout(() => {
         scrollLists()
     }, 1000)
@@ -77,7 +75,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
     ScrollTrigger.getById("horizontal-scroll").disable()
-    console.log('unmount')
+    // console.log('unmount')
 })
 
 
@@ -104,6 +102,7 @@ onBeforeUnmount(() => {
                                 </a>
                             </template>
                             <template #description> {{ item.description }} </template>
+                            <template #password> {{ item.password }} </template>
                             <template #period> {{ item.period }} </template>
                             <template #icons>
                                 <i class="icon" :class="icon" v-for="icon in item.icons" :key="icon"></i>

@@ -11,7 +11,10 @@
     </div>
     <div class="item-body">
         <p class="item-body__description">
-            <slot name="description"></slot>
+            <slot name="description"></slot><br>
+            <span class="item-body__password">
+                <slot name="password"></slot>
+            </span>
         </p>
         
         <p class="item-body__period">
@@ -82,7 +85,11 @@
 
     &__description {
         margin-bottom: main.$v-margin-16;
-        height: 50px;
+        height: 60px;
+    }
+
+    &__password {
+        font-size: 0.8rem;
     }
 
     &__period {
