@@ -29,11 +29,9 @@ const workItems = [
     {
         img: '/assets/img/top/service-sympo.png',
         title: 'My Portfolio（This Site）',
-        link: '',
         description: '「月夜」をテーマに作成',
         period: 'Jan 2022（2 weeks）',
         icons: ['devicon-html5-plain colored', 'devicon-css3-plain colored', 'devicon-sass-original colored', 'devicon-javascript-plain colored', 'devicon-vuejs-plain colored','devicon-nuxtjs-plain colored'],
-        more: '',
         github: 'https://github.com/Ayakie/make-it'
     },
     {
@@ -43,7 +41,6 @@ const workItems = [
         description: '2020年度筑波大学サービス工学シンポジウム（外部向け研究発表会）の特設Webサイトを作成',
         period: 'Jan 2021（1 month）',
         icons: ['devicon-html5-plain colored', 'devicon-css3-plain colored', "devicon-jquery-plain-wordmark", 'devicon-php-plain colored'],
-        more: '',
         github: 'https://github.com/Ayakie/mse_sympo'
     },
 
@@ -102,7 +99,7 @@ onBeforeUnmount(() => {
                                 </a>
                             </template>
                             <template #description> {{ item.description }} </template>
-                            <template #password> {{ item.password }} </template>
+                            <template #password v-if="item.password"> {{ item.password }} </template>
                             <template #period> {{ item.period }} </template>
                             <template #icons>
                                 <i class="icon" :class="icon" v-for="icon in item.icons" :key="icon"></i>

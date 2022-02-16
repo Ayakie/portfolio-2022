@@ -10,12 +10,12 @@
         <slot name="title"></slot>
     </div>
     <div class="item-body">
-        <p class="item-body__description">
-            <slot name="description"></slot><br>
-            <span class="item-body__password">
+        <div class="item-body__description">
+            <slot name="description"></slot>
+            <p class="item-body__password">
                 <slot name="password"></slot>
-            </span>
-        </p>
+            </p>
+        </div>
         
         <p class="item-body__period">
             <slot name="period"></slot>
