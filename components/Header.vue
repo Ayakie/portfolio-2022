@@ -11,7 +11,7 @@ const animLogo = () => {
     scrollTrigger: {
       trigger: '#section--skills',
       scrub:true,
-      markers:true,
+      // markers:true,
       id:'anim-logo',
       end: 'center 80%'
     }
@@ -20,7 +20,7 @@ const animLogo = () => {
   .to('.logo__rest', {
     autoAlpha:0,
     })
-  .to('.logo__ak1', {x:50}, 0.25)
+  .to('.logo__ak1', {x: 50}, 0.25)
   .to('.logo__ak2', {x: -50, autoAlpha:0}, 0.25)
 }
 onMounted(() => {
@@ -28,9 +28,9 @@ onMounted(() => {
     animLogo()
   }, 1000)
 })
-onBeforeUnmount(() => {
-  scrollTrigger.getById('anim-logo').disable()
-})
+// onBeforeUnmount(() => {
+//   scrollTrigger.getById('anim-logo').disable()
+// })
 </script>
 
 

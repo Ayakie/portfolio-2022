@@ -69,12 +69,19 @@ onMounted(() => {
                 <template #first-letter>D</template>
                 <template #rest-letters>esign Process</template>
             </Heading>
+            <div class="section--slide__navigation--process">
+                <!-- <img src="@/assets/img/moon/moon1.png" alt="">
+                <img src="@/assets/img/moon/moon2.png" alt="">
+                <img src="@/assets/img/moon/moon3.png" alt="">
+                <img src="@/assets/img/moon/moon4.png" alt="">
+                <img src="@/assets/img/moon/moon5.png" alt=""> -->
+            </div>
             <!-- スライドブロック -->
             <div class="process-wrapper">
                 <!-- buttons -->
                 <div class="process-wrapper__buttons buttons">
                     <button class="buttons__prev--process">
-                        <span class="material-icons">arrow_back_ios</span>
+                        <span class="material-icons back">arrow_back_ios</span>
                     </button>
                     <button class="buttons__next--process">
                         <span class="material-icons">arrow_forward_ios</span>
@@ -182,12 +189,14 @@ onMounted(() => {
                 <template #first-letter>F</template>
                 <template #rest-letters>eatures</template>
             </Heading>
+            <div class="section--slide__navigation">
+            </div>
             <!-- スライドブロック -->
             <div class="features-wrapper">
                 <!-- buttons -->
                 <div class="features-wrapper__buttons buttons">
                     <button class="buttons__prev--features">
-                        <span class="material-icons">arrow_back_ios</span>
+                        <span class="material-icons back">arrow_back_ios</span>
                     </button>
                     <button class="buttons__next--features">
                         <span class="material-icons">arrow_forward_ios</span>
@@ -301,7 +310,6 @@ onMounted(() => {
     }
 }
 
-// scopedごとに定義でOK
 .process-wrapper {
     @extend %slider-wrapper;
     &__buttons {
@@ -316,7 +324,6 @@ onMounted(() => {
     }
 }
 
-// scopedごとに定義でOK
 .strategy-container {
     display: flex;
     justify-content: space-between;

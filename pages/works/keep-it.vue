@@ -63,7 +63,7 @@ onMounted(() => {
                 <!-- buttons -->
                 <div class="process-wrapper__buttons buttons">
                     <button class="buttons__prev--process">
-                        <span class="material-icons">arrow_back_ios</span>
+                        <span class="material-icons back">arrow_back_ios</span>
                     </button>
                     <button class="buttons__next--process">
                         <span class="material-icons">arrow_forward_ios</span>
@@ -154,7 +154,7 @@ onMounted(() => {
                 <!-- buttons -->
                 <div class="features-wrapper__buttons buttons">
                     <button class="buttons__prev--features">
-                        <span class="material-icons">arrow_back_ios</span>
+                        <span class="material-icons back">arrow_back_ios</span>
                     </button>
                     <button class="buttons__next--features">
                         <span class="material-icons">arrow_forward_ios</span>
@@ -245,7 +245,12 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @use '@/assets/css/main';
-// scopedごとに定義でOK
+
+.container-btns {
+    &__next {
+        visibility: hidden
+    }
+}
 .process-wrapper {
     @extend %slider-wrapper;
     &__buttons {

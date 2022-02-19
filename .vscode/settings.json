@@ -1,0 +1,9 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}",
+        ".nuxt{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/816c86bb-c866-4b2f-af84-cea9671341e2/resourceGroups/portfolio2022/providers/Microsoft.Web/sites/akienakai2022",
+    "appService.deploySubpath": ".output"
+}

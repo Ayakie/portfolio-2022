@@ -65,5 +65,8 @@ export default {
   pageTransition: {
     name: 'page',
     appear: true
+  },
+  nitro: {
+    preset: 'azure_functions'
   }
 }

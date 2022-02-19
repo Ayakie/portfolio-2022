@@ -7,17 +7,17 @@ const animIcons = () => {
     gsap.from('.sns-icons a', {
         y: 50,
         autoAlpha:0,
-        duration:2,
+        duration:3,
         stagger: {
-            from: "edges",
-            amount: 2
+            // from: "edges",
+            amount: 3
         },
         scrollTrigger: {
             trigger: '.sns-icons',
             markers: true,
             scrub: true,
             start: 'top-=100 center+=200',
-            end: 'bottom center',
+            end: 'bottom+=50 center',
             id: 'anim-icons'
         }
         })
