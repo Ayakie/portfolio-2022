@@ -27,7 +27,7 @@ const workItems = [
         github: 'https://github.com/Ayakie/keep-it'
     },
     {
-        img: '/assets/img/top/service-sympo.png',
+        img: '/assets/img/top/portfolio.png',
         title: 'My Portfolio（This Site）',
         description: '「月夜」をテーマに作成',
         period: 'Jan 2022（2 weeks）',
