@@ -15,8 +15,8 @@ onMounted(() => {
         gsap.registerPlugin(ScrollTrigger)
     }
     setTimeout(() => {
-        useSlider('.buttons__next--process', '.buttons__prev--process', '.process-wrapper__slide-item', '.process-wrapper')
-        useSlider('.buttons__next--features', '.buttons__prev--features', '.features-wrapper__slide-item', '.features-wrapper')
+        useSlider('.buttons__next--process', '.buttons__prev--process', '.process-wrapper__slide-item', '.process-wrapper', '.section--slide__navigation--process img')
+        useSlider('.buttons__next--features', '.buttons__prev--features', '.features-wrapper__slide-item', '.features-wrapper', '.section--slide__navigation--features img')
     }, 1000)
 })
 
@@ -70,11 +70,11 @@ onMounted(() => {
                 <template #rest-letters>esign Process</template>
             </Heading>
             <div class="section--slide__navigation--process">
-                <!-- <img src="@/assets/img/moon/moon1.png" alt="">
+                <img src="@/assets/img/moon/moon1.png" alt="">
                 <img src="@/assets/img/moon/moon2.png" alt="">
                 <img src="@/assets/img/moon/moon3.png" alt="">
                 <img src="@/assets/img/moon/moon4.png" alt="">
-                <img src="@/assets/img/moon/moon5.png" alt=""> -->
+                <img src="@/assets/img/moon/moon5.png" alt="">
             </div>
             <!-- スライドブロック -->
             <div class="process-wrapper">
@@ -189,7 +189,12 @@ onMounted(() => {
                 <template #first-letter>F</template>
                 <template #rest-letters>eatures</template>
             </Heading>
-            <div class="section--slide__navigation">
+            <div class="section--slide__navigation--features">
+                <img src="@/assets/img/moon/moon1.png" alt="">
+                <img src="@/assets/img/moon/moon2.png" alt="">
+                <img src="@/assets/img/moon/moon3.png" alt="">
+                <img src="@/assets/img/moon/moon4.png" alt="">
+                <img src="@/assets/img/moon/moon5.png" alt="">
             </div>
             <!-- スライドブロック -->
             <div class="features-wrapper">
@@ -318,7 +323,7 @@ onMounted(() => {
 }
  .features-wrapper {
     @extend %slider-wrapper;
-    height: 530px;
+    height: 550px;
     &__buttons {
         @extend %slider-buttons;
     }

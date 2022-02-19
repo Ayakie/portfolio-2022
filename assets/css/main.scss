@@ -178,17 +178,23 @@ img {
         justify-content: center;
         margin-bottom: 24px;
     }
-    &__navigation--process {
+    &__navigation--process, &__navigation--features {
         height: 32px;
         max-width: 32px;
         width: 100%;
         margin: 0 auto;
-        background: url("../img/spritesheet.png") no-repeat;
+        // background: url("../img/moon/moon1.png") no-repeat;
         position: relative;
         background-position: 0 50%;
+        visibility: hidden;
 
         & img {
             position: absolute;
+            visibility: hidden;
+
+            &:first-child {
+                visibility: visible;
+            }
         }
     }
     & a {
