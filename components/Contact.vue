@@ -14,7 +14,7 @@ const animIcons = () => {
         },
         scrollTrigger: {
             trigger: '.sns-icons',
-            markers: true,
+            // markers: true,
             scrub: true,
             start: 'top-=100 center+=200',
             end: 'bottom+=50 center',

@@ -25,7 +25,7 @@ onMounted(() => {
     <div class="section-container--work-item">
         <section class="section--imgtext">
             <div class="section--imgtext__img">
-                <h1 class="img__title">Make It</h1>
+                <h1 class="section--imgtext__title">Make It</h1>
                 <div>
                     <img src="@/assets/img/make-it/make-it-2.png" alt="">
                 </div>

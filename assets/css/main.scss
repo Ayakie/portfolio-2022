@@ -77,7 +77,7 @@ img {
 
 .heading {
     font-family:  transat-text, mr-eaves-modern, poppins,"ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
-    font-size: 32px;
+    font-size: 2rem;
     font-style: normal;
     text-align: center;
     font-weight: normal;
@@ -165,6 +165,14 @@ img {
     & h3 {
         padding-top: $v-margin-16;
     }
+    &__title {
+        @extend .heading;
+        width: 40%;
+        font-size: 2.2rem;
+        margin-right: auto;
+        text-align: left;
+        margin-bottom: 1.5rem;
+    }
 }
 
 // スライドセクション
@@ -178,6 +186,7 @@ img {
         justify-content: center;
         margin-bottom: 24px;
     }
+    // moon navigation
     &__navigation--process, &__navigation--features {
         height: 32px;
         max-width: 32px;
@@ -219,7 +228,8 @@ img {
 %slider-wrapper {
     position: relative;
     width: 100%;
-    height: clamp(600px, 50vw, 670px);
+    height: 680px;
+    // height: clamp(600px, 50vw, 680px);
     overflow-x: hidden;
 }
 %slider-buttons {

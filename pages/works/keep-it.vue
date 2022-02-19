@@ -25,7 +25,7 @@ onMounted(() => {
     <div class="section-container--work-item">
         <section class="section--imgtext">
             <div class="section--imgtext__img">
-                <h1 class="img__title">Keep It</h1>
+                <h1 class="section--imgtext__title">Keep It</h1>
                 <div>
                     <img src="@/assets/img/keep-it/keep-it-2.png" alt="">
                 </div>
@@ -298,7 +298,7 @@ onMounted(() => {
         max-height: 450px;
 
         &--model, &--slide {
-            max-width: 80%;
+            max-width: 800px;
         }
 
         &--color {

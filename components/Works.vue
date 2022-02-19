@@ -30,8 +30,8 @@ const workItems = [
         img: '/assets/img/top/portfolio.png',
         title: 'My Portfolio（This Site）',
         description: '「月夜」をテーマに作成',
-        period: 'Jan 2022（2 weeks）',
-        icons: ['devicon-html5-plain colored', 'devicon-css3-plain colored', 'devicon-sass-original colored', 'devicon-javascript-plain colored', 'devicon-vuejs-plain colored','devicon-nuxtjs-plain colored'],
+        period: 'Jan 2022（1 month）',
+        icons: ['devicon-html5-plain colored', 'devicon-css3-plain colored', 'devicon-sass-original colored', 'devicon-javascript-plain colored', 'devicon-vuejs-plain colored','devicon-nuxtjs-plain colored', 'devicon-azure-plain colored'],
         github: 'https://github.com/Ayakie/make-it'
     },
     {
