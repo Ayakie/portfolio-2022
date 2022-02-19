@@ -16,10 +16,14 @@ export default {
 </script>
 <template>
   <div>
+    <Html lang="ja">
+        <Title>aknaka portfolio</Title>
+        <Meta name="description" content="This is Akie Nakai's portfolio site"/>
+    </Html>
     <NuxtLayout>
       <NuxtPage/>
     </NuxtLayout>
-</div>
+  </div>
 </template>
 
 <style>
