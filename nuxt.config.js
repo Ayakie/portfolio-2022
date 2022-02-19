@@ -67,6 +67,6 @@ export default {
     appear: true
   },
   nitro: {
-    preset: 'azure_functions'
+    preset: 'server'
   }
 }
