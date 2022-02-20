@@ -205,9 +205,10 @@ img {
         width: 100%;
         margin: 0 auto;
         // background: url("../img/moon/moon1.png") no-repeat;
-        position: relative;
-        background-position: 0 50%;
+        // position: relative;
+        // background-position: 0 50%;
         visibility: hidden;
+        margin-bottom: 1rem;
 
         & img {
             position: absolute;
@@ -240,9 +241,8 @@ img {
 %slider-wrapper {
     position: relative;
     width: 100%;
-    height: 680px;
-    // height: clamp(600px, 50vw, 680px);
-    overflow-x: hidden;
+    height: 750px;
+    // overflow-x: hidden;
 }
 %slider-buttons {
     position: absolute;
@@ -291,5 +291,31 @@ $heading-smartphone: 24px;
             font-size: $heading-smartphone;
             margin-bottom: 2rem;
         }
+    }
+    .section--imgtext {
+        flex-direction: column;
+        padding-left: 1rem;
+        // gap: 1rem;
+
+        &__text {
+            padding: 0 1rem;
+
+            & .heading-container {
+                justify-content: center;
+            }
+        }
+    }
+    // widthがscoped cssに効かない
+    // .strategy-container {
+        
+    //     &__column--pain {
+    //         width: 100%;
+    //     }
+    //     &__column--competition {
+    //         display: none;
+    //     }
+    // }
+    figcaption {
+        font-size: 12px;
     }
 }

@@ -82,8 +82,7 @@ onMounted(() => {
                 <Process class="process-wrapper__slide-item s1">
                     <template #title>戦略 / 要件の設定</template>
                     <template #description>
-                        <!-- <p>課題感（Pain）を起点に既存サービスの問題点（Competition）を挙げ、本アプリにて達成したいことを明確にします。<br>
-                        OOUIの考え方に基づき、タスクからオブジェクトを洗い出し、インタラクションモデルを構想しました。</p> -->
+                        <p>課題感（Pain）を起点に既存サービスの問題点（Competition）を挙げ、本アプリにて達成したいことを明確にします。</p>
                         <!-- 2カラム -->
                         <div class="strategy-container">
                             <div class="strategy-container__column--pain">
@@ -310,6 +309,39 @@ onMounted(() => {
 
         &--color {
             max-height: 300px;
+        }
+    }
+}
+
+@media (max-width:744px) {
+    .strategy-container {
+        &__column--pain {
+            width: 100%;
+        }
+        &__column--competition {
+            display: none;
+        }
+    }
+    .features-wrapper,.process-wrapper {
+        height: clamp(560px, 80vw, 700px);
+        overflow: visible;
+
+        &__buttons {
+            position: absolute;
+            top: -32px;
+            
+        }
+    }
+    .features-wrapper {
+        height: 620px;
+    }
+    .imgs-container {
+        &__img {
+            // max-height: 450px;
+
+            &--model, &--slide {
+                max-width: 100%;
+            }
         }
     }
 }
