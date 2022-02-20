@@ -287,7 +287,7 @@ onMounted(() => {
                 <template #first-letter>P</template>
                 <template #rest-letters>ost Script</template>
             </Heading>
-            <p class="section--post-script__sub-title">あとがき</p>
+            <div class="section--post-script__sub-title">あとがき</div>
             <p>本アプリケーションは、自身が初めて作成した（自分のための）SPA アプリケーションです。<br>
             シンプルな機能ながら、タスクの CRUD 機能、タグ検索機能、カレンダーとの連携など、<br>その時点で学んだ Vue3 と JavaScript の理解を全て盛り込みました。<br>
             また、ボタンなどの装飾も自装し、CSS への理解を深めることも狙いとしています。</p>

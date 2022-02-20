@@ -199,6 +199,7 @@ img {
 /* post script */
 .section--post-script__sub-title {
   font-size: 20px;
+  text-align: center;
 }
 .section--post-script p {
   text-align: center;
@@ -238,6 +239,11 @@ img {
 
   .section--slide {
     margin: 1rem 0;
+  }
+
+  .section--post-script p {
+    padding: 0 1rem;
+    text-align: left;
   }
 }
 /*# sourceMappingURL=main.css.map */

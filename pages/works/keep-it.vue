@@ -231,7 +231,7 @@ onMounted(() => {
                 <template #first-letter>P</template>
                 <template #rest-letters>ost Script</template>
             </Heading>
-            <p class="section--post-script__sub-title">あとがき</p>
+            <div class="section--post-script__sub-title">あとがき</div>
             <p>
                 Keep It では真新しい機能はありませんが、「UI / UX デザイン」にこだわったアプリケーションです。<br>
                 すぐにメモを残せ、かつ定期的に振り返りたくなるような、美しいギャラリー風のアプリケーションを目指しました。
