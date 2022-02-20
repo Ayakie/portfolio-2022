@@ -12,7 +12,7 @@ onMounted(() => {
       <div class="loading__content">
         Hello. I am
         <span class="logo-container">
-          <svg class="logo-container__svg" height="24" viewBox="0 0 125.46 18">
+          <svg class="logo-container__svg" viewBox="0 0 125.46 18">
             <g>
                 <path class="logo-container__ak1 cls-1" data-name="ak"
                     d="M0 17.9 8 .25h.9l8 17.65H14l-2.35-5.77-6.11-.07-2.68 5.84Zm6.34-7.79h4.23L8.45 5.22ZM16.1.45h2.64V9.5l6.83-9h3.15L21 10.49l8.67 7.41h-3.45l-7.33-6.18-.15 6.18H16.1Z" />
@@ -65,6 +65,7 @@ onMounted(() => {
 
   &__svg {
     fill: main.$main;
+    height: 24px;
   }
 }
 .logo-container__rest.period {
@@ -72,6 +73,15 @@ onMounted(() => {
 }
 
 @media (max-width:744px) {
-  
+  .loading {
+    &__content {
+      font-size: main.$heading-smartphone;
+    }
+  }
+  .logo-container {
+    &__svg {
+      height: 20px;
+    }
+  }
 }
 </style>

@@ -284,9 +284,11 @@ img {
     transition: all 0.3s ease-out;
 }
 
+$heading-smartphone: 24px;
 @media (max-width: 744px) {
     .section-top {
         &__heading {
+            font-size: $heading-smartphone;
             margin-bottom: 2rem;
         }
     }

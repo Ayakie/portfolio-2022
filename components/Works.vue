@@ -36,7 +36,7 @@ const workItems = [
     },
     {
         img: '/assets/img/top/service-sympo.png',
-        title: '大学院 シンポジウム 特設 Web サイト',
+        title: '大学院研究発表 特設Webサイト',
         link: 'https://www.sk.tsukuba.ac.jp/~msesympo/2020/',
         description: '2020年度筑波大学サービス工学シンポジウム（外部向け研究発表会）の特設Webサイトを作成',
         period: 'Jan 2021（1 month）',
@@ -47,19 +47,21 @@ const workItems = [
     ]
 const scrollLists = () => {
     const listWrapperEl = document.querySelector('.wrapper__scroll-list')
+    let items = gsap.utils.toArray('.list-item')
 
     gsap.to(".scroll-list", {
-        xPercent: -60,
+        xPercent: -80,
         ease: 'none',
         scrollTrigger: {
             trigger: '#section--works',
             start: 'top top',
-            end:  () =>  `+=${listWrapperEl.offsetWidth}`,
-            scrub: 0.7,
+            end:  ()  =>  `+=${listWrapperEl.offsetWidth}`,
+            scrub: 1,
             pin: true,
             // markers: true,
             id: "horizontal-scroll",
             invalidateOnRefresh: true,
+            // snap: 1 / (items.length-1)
         }
     })
 }
@@ -152,6 +154,12 @@ a {
     &:hover .material-icons, &:hover .devicon-github-original {
         color: main.$accent;
         transform: translate(5%);
+    }
+}
+
+@media (max-width:744px) {
+    .section-top__heading {
+        padding-bottom: 0;
     }
 }
 </style>

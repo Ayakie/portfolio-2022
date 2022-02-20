@@ -116,4 +116,29 @@
 .item-list__title:hover + .material-icons.open {
     color: main.$accent;
 }
+
+@media (max-width: 744px) {
+    .list-item {
+        width: 100vw;
+        padding: 0 2rem;
+
+        &__card {
+            height: 220px;
+        }
+
+        &__title {
+            font-size: 17px;
+            & .material-icons {
+                font-size: 18px;
+            }
+        }
+
+    }
+    .item-body {
+        &__description {
+            height: 80px;
+        }
+
+    }
+}
 </style>
