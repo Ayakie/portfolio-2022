@@ -137,5 +137,8 @@ $circle-width-mb: 280px;
         width: $circle-width-mb;
         height: $circle-width-mb;
     }
+    .heading--sub {
+        margin: 1rem 0;
+    }
 }
 </style>

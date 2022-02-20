@@ -2,7 +2,7 @@
 import { useLoading } from "~~/composables/useLoading";
 
 onMounted(() => {
-  setTimeout(()=> useLoading(), 1000)
+  setTimeout(()=> useLoading(), 500)
 });
 </script>
 
@@ -69,5 +69,9 @@ onMounted(() => {
 }
 .logo-container__rest.period {
   margin-left: 2px;
+}
+
+@media (max-width:744px) {
+  
 }
 </style>

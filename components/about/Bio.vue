@@ -46,4 +46,10 @@ table {
   }
 }
 
+@media (max-width: 744px) {
+  table {
+    margin: 0;
+  }
+}
+
 </style>

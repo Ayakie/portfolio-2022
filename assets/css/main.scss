@@ -285,5 +285,9 @@ img {
 }
 
 @media (max-width: 744px) {
-
+    .section-top {
+        &__heading {
+            margin-bottom: 2rem;
+        }
+    }
 }

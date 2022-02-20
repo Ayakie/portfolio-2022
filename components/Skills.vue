@@ -30,43 +30,54 @@ const others = ref([
         </h1>
         <!-- paddingの影響でずれる -->
         <div class="">
-            <div class="block">
-                <div class="block__column">
-                    <div class="block__heading heading--sub">
+            <div class="container">
+                <div class="container__column column">
+                    <div class="column__heading heading--sub">
                         Design
                     </div>
-                    <div class="row">
-                        <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="56"/>
-                        Figma
-                    </div>
-                    <div class="row" v-for="skill in design" :key="skill.text">
-                        <i class="icon" :class="skill.name"></i>{{ skill.text }}
+                    <div class="column__content content">
+                        <!-- icon -->
+                        <div class="content__icons">
+                            <div class="content__icons__row">
+                                <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="56"/>
+                                Figma
+                            </div>
+                            <div class="content__icons__row" v-for="skill in design" :key="skill.text">
+                                <i class="icon" :class="skill.name"></i>{{ skill.text }}
+                            </div>
+                        </div>
+                        <div class="content__description">心を動かし、行動のきっかけをもたらす UI/UX デザインを考えることが好きです。作りたいイラストがあれば自分で作成します。</div>
                     </div>
                 </div>
-                <div class="block__column">
-                    <div class="block__heading heading--sub">
+                <div class="container__column column">
+                    <div class="column__heading heading--sub">
                         Front
                     </div>
-                    <div class="row" v-for="skill in front" :key="skill.text">
-                        <i class="icon" :class="skill.name"></i>{{ skill.text }}
+                    <div class="column__content content">
+                        <div class="content__icons">
+                            <div class="content__icons__row" v-for="skill in front" :key="skill.text">
+                                <i class="icon" :class="skill.name"></i>{{ skill.text }}
+                            </div>
+                        </div>
+                        <div class="content__description">コードがあってこそのデザインと考え、デザインを具現化するための技術を日々独学しています。</div>
                     </div>
                 </div>
-                <div class="block__column">
-                    <div class="block__heading heading--sub">
+                <div class="container__column column">
+                    <div class="column__heading heading--sub">
                         Others
                     </div>
-                    <div class="row">
-                        <img class="icon" src="~/assets/img/top/communication.svg" width="56">Communication<br>Presentation
-                    </div>
-                    <div class="row" v-for="skill in others" :key="skill.text">
-                        <i class="icon" :class="skill.name"></i>{{ skill.text }}
+                    <div class="column__content content">
+                        <div class="content__icons">
+                            <div class="content__icons__row">
+                                <img class="icon" src="~/assets/img/top/communication.svg" width="56">Communication<br>Presentation
+                            </div>
+                            <div class="content__icons__row" v-for="skill in others" :key="skill.text">
+                                <i class="icon" :class="skill.name"></i>{{ skill.text }}
+                            </div>
+                        </div>
+                        <div class="content__description">大学院ではPythonを用いた機械学習を研究。研究や授業のプロジェクトではリーダーポジションを多く経験していました。</div>
                     </div>
                 </div>
-            </div>
-            <div class="block">
-                <div class="block__column--description">心を動かし、行動のきっかけをもたらす UI/UX デザインを考えることが好きです。作りたいイラストがあれば自分で作成します。</div>
-                <div class="block__column--description">コードがあってこそのデザインと考え、デザインを具現化するための技術を日々独学しています。</div>
-                <div class="block__column--description">大学院ではPythonを用いた機械学習を研究。研究や授業のプロジェクトではリーダーポジションを多く経験していました。</div>
             </div>
         </div>
     </section>
@@ -82,21 +93,29 @@ const others = ref([
 %__column {
     padding: 0 20px;
 }
-.block {
+.container {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     justify-items: space-between;
     align-content: space-around;
+}
+.content {
+    @extend %__column;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
-    &__column {
+    &__icons {
+        height: 440px
+    }
+    
+    &__description {
         @extend %__column;
+        font-size: 15px;
 
-        &--description {
-            @extend %__column;
-            font-size: 15px;
-        }
     }
 }
 
@@ -104,12 +123,15 @@ const others = ref([
     font-size: 56px;
     margin-right: 10px;
 }
-.row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-    font-family: Monaco, Andale Mono, PT Mono;
-    font-size: 14px;
+.content__icons {
+
+    &__row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        font-family: Monaco, Andale Mono, PT Mono;
+        font-size: 14px;
+    }
 }
 
 .heading--sub {
@@ -117,8 +139,29 @@ const others = ref([
 }
 
 @media (max-width: 744px) {
-    .block {
+    .container {
         grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+    }
+    .heading--sub {
+        margin-bottom: 1rem;
+    }
+    
+    .content__icons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: auto;
+        gap: 0 16px;
+
+        &__row {
+            flex-direction: column;
+            font-size: 12px;
+        }
+
+        & .icon {
+            margin-right: 0;
+            margin-bottom: 4px;
+        }
     }
 }
 </style>
