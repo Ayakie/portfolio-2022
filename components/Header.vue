@@ -52,7 +52,7 @@ onMounted(() => {
         </a>
       </div>
       <!-- nav -->
-      <button @click="handleClick" 
+      <button @click="handleClick"
       class="header__navbtn hamburger hamburger--spin" :class="{'is-active': isOpen}">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
@@ -94,6 +94,9 @@ onMounted(() => {
       z-index: 100;
     }
 }
+.header__navbtn {
+  display: none;
+}
 
 %container {
     width: min(92%, 1200px);
@@ -134,6 +137,7 @@ onMounted(() => {
 .cls-1 {
   fill: main.$main;
 }
+
 @media (max-width: 744px) {
   .header__navbtn {
     display: inherit;
