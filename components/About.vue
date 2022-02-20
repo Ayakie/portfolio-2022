@@ -51,7 +51,7 @@ const currentComponent = computed(() => {
                 <div class="block">
                     <div class="circle">
                         <img class="circle__img--black" src="@/assets/img/top/me-black.svg" alt="">
-                        <img class="circle__img--color" src="@/assets/img/top/me-color.png" alt="">
+                        <!-- <img class="circle__img--color" src="@/assets/img/top/me-color.png" alt=""> -->
                     </div>
                 </div>
                 <div class="block">

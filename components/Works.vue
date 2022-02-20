@@ -5,7 +5,7 @@ import Item from './works/Item.vue';
 
 const workItems = [
     {
-        img: "/assets/img/make-it/make-it-top.png",
+        img: "/img/make-it-top.png",
         title: 'Make It',
         link: 'https://dragonash-257b7.web.app/',
         description: 'あなたの目標達成のためのタスク管理アプリ',
@@ -16,7 +16,7 @@ const workItems = [
         github: 'https://github.com/Ayakie/make-it'
     },
     {
-        img: '/assets/img/keep-it/keep-it-top.png',
+        img: '/img/keep-it-top.png',
         title: 'Keep It',
         link: 'https://dragonash-keep-it.web.app/',
         description: '残したいことを美しく記録するギャラリーサイトアプリ',
@@ -27,7 +27,7 @@ const workItems = [
         github: 'https://github.com/Ayakie/keep-it'
     },
     {
-        img: '/assets/img/top/portfolio.png',
+        img: '/img/portfolio.png',
         title: 'My Portfolio（This Site）',
         description: '「月夜」をテーマに作成',
         period: 'Jan 2022（1 month）',
@@ -35,7 +35,7 @@ const workItems = [
         github: 'https://github.com/Ayakie/make-it'
     },
     {
-        img: '/assets/img/top/service-sympo.png',
+        img: '/img/service-sympo.png',
         title: '大学院研究発表 特設Webサイト',
         link: 'https://www.sk.tsukuba.ac.jp/~msesympo/2020/',
         description: '2020年度筑波大学サービス工学シンポジウム（外部向け研究発表会）の特設Webサイトを作成',
