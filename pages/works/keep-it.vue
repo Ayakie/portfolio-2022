@@ -48,6 +48,10 @@ onMounted(() => {
                     <p>デジタル世界の Inspiration をメモとして記録するアプリはたくさんあるけど、<br>
                     日々の生活の中で出会ったコトバ・モノを、一箇所に残したい。</p>
                     <p>そんな思いから、この「Keep It」を作りました。</p>
+                    <p>URL は <a href="https://dragonash-keep-it.web.app" target="_blank">こちら
+                    <span class="material-icons open">open_in_new</span></a><br>
+                    <span class="text--pass">email: test@contoso.com / password: 123456</span>でログインください。
+                    </p>
                 </div>
             </div>
         </section>
@@ -93,7 +97,7 @@ onMounted(() => {
                             <div class="strategy-container__column--competition">
                                 <h3>Competition</h3>
                                 <ol>
-                                    <li>Pinterest
+                                    <li  class="competition--1">Pinterest
                                         <ul>
                                             <li>画像中心に記録する媒体であり、コトバだけを簡単にメモできない</li>
                                             <li>Notesやコメントなど機能が多く、メモをどこに残せば良いのかよくわからない。残しづらい</li>
@@ -212,7 +216,7 @@ onMounted(() => {
                     <template #description>
                         <p>
                             404 Not Found のページや、画像アップロード時の Pending 画面は、<br>
-                            「ギャラリー」というテーマに沿ったイラストを自作し、アプリ利用時のユーザー体験の向上を目指しました。
+                            「ギャラリー」にマッチしたイラストを自作し、アプリ利用時のユーザー体験の向上を目指しました。
                         </p>
                     </template>
                     <template #imgs>
@@ -235,7 +239,7 @@ onMounted(() => {
             </p>
             <p>
                 技術的には、ユーザー体験を向上させるために、Vue Transition / Animation を多く取り入れました。<br>
-                また新しく Sass を取り入れ、BEM 命名規則に則ったメンテナンスしやすい CSS 実装を意識しました。
+                また新しく Sass を導入し、BEM 命名規則に則ったメンテナンスしやすい CSS 実装を意識しました。
             </p>
         </section>
 
@@ -291,6 +295,9 @@ onMounted(() => {
     & h3 {
         text-align: center;
     }
+    & .competition--1 {
+    margin-bottom: 1rem;
+}
 }
 
 .imgs-container {

@@ -173,6 +173,18 @@ img {
         text-align: left;
         margin-bottom: 1.5rem;
     }
+
+    & a {
+        color: $accent;
+        &:hover .material-icons.open {
+            transform: translate(5%);
+        }
+    }
+    & .material-icons.open {
+        transition: all 0.3s;
+        font-size: 16px;
+        padding-bottom: 2px;
+    }
 }
 
 // スライドセクション

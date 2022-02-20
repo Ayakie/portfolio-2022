@@ -48,6 +48,10 @@ onMounted(() => {
                     <p>わかっている。でもできない。なぜ？</p>
                     <p>そもそも行動する前に、目標の細分化など、自分で設定し可視化すべき項目が多いのではないか？</p>
                     <p>Make It は、そんなペインを手助けするために生まれました。</p>
+                    <p>URL は <a href="https://dragonash-257b7.web.app/" target="_blank">こちら
+                    <span class="material-icons open">open_in_new</span></a><br>
+                    <span class="text--pass">email: test@contoso.com / password: 123456</span>でログインください。
+                    </p>
                 </div>
                 <div>
                     <h3>名前の由来</h3>
@@ -95,7 +99,7 @@ onMounted(() => {
                         OOUIの考え方に基づき、タスクからオブジェクトを洗い出し、インタラクションモデルを構想しました。</p> -->
                         <!-- 2カラム -->
                         <div class="strategy-container">
-                            <div class="strategy-container__column">
+                            <div class="strategy-container__column--pain">
                                 <h3>Pain</h3>
                                 <ul>
                                     <li>目標達成日までの残り時間がわからず、最終ゴールをイメージしにくい。</li>
@@ -103,16 +107,16 @@ onMounted(() => {
                                     <li>ゴールを日頃から意識できていないから、切迫感がなく、モチベーションを維持しにくい。</li>
                                 </ul>
                             </div>
-                            <div class="strategy-container__column">
+                            <div class="strategy-container__column--competition">
                                 <h3>Competition</h3>
                                 <ol>
-                                    <li>StudyPlus: スマートフォン アプリ
+                                    <li class="competition--1">StudyPlus: スマートフォン アプリ
                                         <ul>
                                             <li>スマートフォンアプリのためWebでPCを用いて記録できない</li>
                                             <li>目標日までにやるべきことが設定しにくい</li>
                                         </ul>
                                     </li>
-                                    <li>Google Task
+                                    <li class="competition--2">Google Task
                                         <ul>
                                             <li>気軽にタスク作成できるものの、個々のタスクの振り返りができない</li>
                                             <li>元々使っているGoogleカレンダー内の予定と混合してしまい、見にくくなってしまう</li>
@@ -335,14 +339,19 @@ onMounted(() => {
     // align-items: center;
     width: 100%;
 
-    &__column {
-        width: 47%;
+    &__column--pain {
+        width: 42%;
+    }
+    &__column--competition {
+        width: 52%;
     }
     & h3 {
         text-align: center;
     }
+    & .competition--1 {
+    margin-bottom: 1rem;
 }
-
+}
 // scopedにしてるのでProcess.vueのスタイルは適用されない
 // このスタイリングで良いか要検討
 // keep-itでも使いまわせるか
