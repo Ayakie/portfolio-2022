@@ -1,5 +1,8 @@
 <template>
 <div class="bio">
+  <div class="bio__description">
+    詳細な経歴は <a href="https://www.linkedin.com/in/akienakai1023/" target="_blank" class="sns-icons__icon">LinkedIn</a> を参照ください
+  </div>
   <table>
     <tr>
       <th>2019.03</th>
@@ -16,7 +19,7 @@
     </tr>
     <tr>
       <th>2021.03</th>
-      <td>筑波大学 システム情報工学研究科 サービス工学学位プログラム 卒業 <br> 社会工学専攻 専攻長賞 受賞</td>
+      <td>筑波大学 システム情報工学研究科 サービス工学学位プログラム 卒業 / 社会工学専攻 専攻長賞 受賞</td>
     </tr>
     <tr>
       <th>2021.04</th>
@@ -31,6 +34,14 @@
 
 .bio {
   padding-top: main.$v-margin-16;
+  &__description {
+    text-align: center;
+    margin-bottom: 1rem;
+    
+    & a {
+      color: main.$secondary;
+    }
+  }
 }
 
 table {
@@ -49,6 +60,7 @@ table {
 @media (max-width: 744px) {
   table {
     margin: 0;
+    font-size: 14px;
   }
 }
 
