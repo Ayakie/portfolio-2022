@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
 @use '@/assets/css/main';
-$width: 40px;
+$width: 30px;
 .btn {
     padding: 20px 60px;
     border: 1px solid main.$main;
@@ -35,6 +35,13 @@ $width: 40px;
     100% {
         transform: scale(2);
         opacity: 0;
+    }
+}
+
+@media (max-width:744px) {
+    .btn {
+        padding: 15px 30px;
+        font-size: 12px;
     }
 }
 </style>

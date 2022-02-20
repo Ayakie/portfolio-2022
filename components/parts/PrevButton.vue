@@ -47,5 +47,9 @@ $height-position: 4px;
         width: 85%;
     }
 }
-
+@media (max-width: 744px) {
+    .text {
+        font-size: 12px;
+    }
+}
 </style>
