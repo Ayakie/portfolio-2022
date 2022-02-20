@@ -123,7 +123,8 @@
         padding: 0 2rem;
 
         &__card {
-            height: 220px;
+            height: 200px;
+            text-align: center;
         }
 
         &__title {

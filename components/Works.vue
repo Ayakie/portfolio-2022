@@ -92,7 +92,7 @@ onBeforeUnmount(() => {
                     <div v-for="(item, idx) in workItems" :key="idx">
                         <Item>
                             <template #img-url>
-                                <img :src="item.img" alt="">
+                                <img class="item__img" :src="item.img" alt="">
                             </template>
                             <template #title>
                                 <a :href="item.link" target="_blank">
@@ -128,6 +128,10 @@ onBeforeUnmount(() => {
 
 <style lang="scss" scoped>
 @use "@/assets/css/main";
+
+.item__img {
+    max-width: 90%;
+}
 
 .section-top__heading {
     padding-bottom: clamp(60px, 6vw, 90px);
