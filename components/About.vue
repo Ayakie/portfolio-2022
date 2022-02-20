@@ -44,7 +44,7 @@ const currentComponent = computed(() => {
         @enter="enter"
         name="about"
         > -->
-        <h1 class="section-top__heading">I am AKIE NAKAI.</h1>
+        <h1 class="section-top__heading">Hello. I am AKIE NAKAI.</h1>
         <!-- </transition> -->
         <div class="section-top__inner-content">
             <div class="container--about">

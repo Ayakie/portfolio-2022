@@ -53,9 +53,9 @@ img {
   margin-top: -24px;
 }
 
-.heading, .heading--sub, .section-top__heading {
+.heading, .section--imgtext__title, .heading--sub, .section-top__heading {
   font-family: transat-text, mr-eaves-modern, poppins, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
-  font-size: 32px;
+  font-size: 2rem;
   font-style: normal;
   text-align: center;
   font-weight: normal;
@@ -128,6 +128,13 @@ img {
 .section--imgtext h3 {
   padding-top: 1rem;
 }
+.section--imgtext__title {
+  width: 40%;
+  font-size: 2.2rem;
+  margin-right: auto;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
 
 .section--slide {
   margin: clamp(60px, 6vw, 90px) 0;
@@ -138,17 +145,21 @@ img {
   justify-content: center;
   margin-bottom: 24px;
 }
-.section--slide__navigation--process {
+.section--slide__navigation--process, .section--slide__navigation--features {
   height: 32px;
   max-width: 32px;
   width: 100%;
   margin: 0 auto;
-  background: url("../img/spritesheet.png") no-repeat;
   position: relative;
   background-position: 0 50%;
+  visibility: hidden;
 }
-.section--slide__navigation--process img {
+.section--slide__navigation--process img, .section--slide__navigation--features img {
   position: absolute;
+  visibility: hidden;
+}
+.section--slide__navigation--process img:first-child, .section--slide__navigation--features img:first-child {
+  visibility: visible;
 }
 .section--slide a {
   color: #BBBBBB;
