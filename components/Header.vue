@@ -1,10 +1,10 @@
 <script setup>
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-const currentPage = ref(null)
+const isOpen = ref(false)
 
-const handleClick = (page) => {
-  currentPage.value = page
+const handleClick = () => {
+  isOpen.value = !isOpen.value
 }
 const animLogo = () => {
   const TL = gsap.timeline({
@@ -52,21 +52,23 @@ onMounted(() => {
         </a>
       </div>
       <!-- nav -->
-      <nav class="header__right">
-        <a href="#section--about" class="header__item" :class="{active: currentPage === 'about'}"
-         @click="handleClick('about')">ABOUT</a>
-        <a href="#section--skills" class="header__item" :class="{active: currentPage ==='skills'}"
-        @click="handleClick('skills')">SKILLS</a>
-        <a href="#section--works" class="header__item" :class="{active: currentPage === 'works'}"
-        @click="handleClick('works')">WORKS</a>
-        <a href="#section--contact" class="header__item" :class="{active: currentPage ==='contact'}"
-        @click="handleClick('contact')">CONTACT</a>
+      <button @click="handleClick" 
+      class="header__navbtn hamburger hamburger--spin" :class="{'is-active': isOpen}">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <nav class="header__right" :class="{'is-open': isOpen}">
+        <a href="#section--about" class="header__item" @click="isOpen = !isOpen" >ABOUT</a>
+        <a href="#section--skills" class="header__item" @click="isOpen = !isOpen">SKILLS</a>
+        <a href="#section--works" class="header__item" @click="isOpen = !isOpen">WORKS</a>
+        <a href="#section--contact" class="header__item" @click="isOpen = !isOpen">CONTACT</a>
       </nav>
     </div>
   </header>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use '@/assets/css/main';
 .header {
     font-family: poppins, sans-serif;
@@ -85,6 +87,11 @@ onMounted(() => {
 
     &__item {
         margin-left: 16px;
+    }
+
+    &__navbtn {
+      display: none;
+      z-index: 100;
     }
 }
 
@@ -123,11 +130,36 @@ onMounted(() => {
     transform: scale(1,1);
   }
 
-  // &.active::after {
-  //   transform: scale(1,1);
-  // }
 }
 .cls-1 {
   fill: main.$main;
+}
+@media (max-width: 744px) {
+  .header__navbtn {
+    display: inherit;
+    z-index: 100;
+  }
+  .header__right {
+    position: fixed;
+    background: main.$bg-black;
+    opacity: 0.9;
+    width: 100vw;
+    height: 100vh;
+    // これで全画面覆う
+    inset: 0 -100% 0 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: all 0.4s;
+  }
+  .header__right.is-open {
+    transform: translateX(-100%);
+  }
+  .is-open body {
+    position: fixed;
+    overflow: hidden;
+  }
 }
 </style>

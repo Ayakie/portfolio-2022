@@ -22,6 +22,10 @@ body {
 body::-webkit-scrollbar {
     display: none;
 }
+.is-open body {
+    position: fixed;
+    overflow: hidden;
+}
 
 html, div {
     font-family: $font-family;

@@ -12,6 +12,11 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.is-open body {
+  position: fixed;
+  overflow: hidden;
+}
+
 html, div {
   font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Noto Sans", "Noto Sans JP", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   scroll-behavior: smooth;
@@ -135,6 +140,17 @@ img {
   text-align: left;
   margin-bottom: 1.5rem;
 }
+.section--imgtext a {
+  color: #FFE799;
+}
+.section--imgtext a:hover .material-icons.open {
+  transform: translate(5%);
+}
+.section--imgtext .material-icons.open {
+  transition: all 0.3s;
+  font-size: 16px;
+  padding-bottom: 2px;
+}
 
 .section--slide {
   margin: clamp(60px, 6vw, 90px) 0;
@@ -150,9 +166,8 @@ img {
   max-width: 32px;
   width: 100%;
   margin: 0 auto;
-  position: relative;
-  background-position: 0 50%;
   visibility: hidden;
+  margin-bottom: 1rem;
 }
 .section--slide__navigation--process img, .section--slide__navigation--features img {
   position: absolute;
@@ -197,5 +212,32 @@ img {
 
 .page-enter-active, .page-leave-active {
   transition: all 0.3s ease-out;
+}
+
+@media (max-width: 744px) {
+  .section-top__heading {
+    font-size: 24px;
+    margin-bottom: 2rem;
+  }
+
+  .section--imgtext {
+    flex-direction: column;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+  }
+  .section--imgtext__text {
+    padding: 0 1rem;
+  }
+  .section--imgtext__text .heading-container {
+    justify-content: center;
+  }
+
+  figcaption {
+    font-size: 12px;
+  }
+
+  .section--slide {
+    margin: 1rem 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */

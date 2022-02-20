@@ -8,7 +8,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: "https://use.typekit.net/hkx4eig.css"},
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
     ],
     script: [
       { src: 'https://kit.fontawesome.com/58a9339a9a.js'}
@@ -21,6 +21,7 @@ export default {
     '~/node_modules/ress/ress.css',
     '~/node_modules/devicon/devicon.min.css',
     '@fortawesome/fontawesome-free/css/all.min.css',
+    '~/assets/css/hamburgers.css',
     '~/assets/css/main.css',
     '~/assets/css/main.scss',
   ],
