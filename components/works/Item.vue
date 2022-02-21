@@ -48,7 +48,7 @@
 
     &__card {
         width: 100%;
-        height: 350px;
+        height: 330px;
     }
 
     &__title {
