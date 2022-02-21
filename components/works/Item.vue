@@ -43,12 +43,13 @@
 }
 
 .list-item {
-    width: 500px;
+    width: clamp(400px, 60vh, 550px);
     // height: 640px;
 
     &__card {
         width: 100%;
-        height: 330px;
+        height: clamp(220px, 37vh, 330px);
+        text-align: center;
     }
 
     &__title {
@@ -85,7 +86,7 @@
 
     &__description {
         margin-bottom: main.$v-margin-16;
-        height: 60px;
+        height: clamp(50px, 7.5vh, 100px);
     }
 
     &__password {
@@ -106,7 +107,7 @@
     }
 
     &__icons {
-        margin-bottom: 24px;
+        margin-bottom: clamp(16px, 3vh, 24px);
         & .icon {
             margin-right: 4px;
         }

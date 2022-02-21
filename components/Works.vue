@@ -134,7 +134,7 @@ onBeforeUnmount(() => {
 }
 
 .section-top__heading {
-    padding-bottom: clamp(60px, 6vw, 90px);
+    padding-bottom: clamp(32px, 6.5vh, 70px);
 }
 
 .wrapper {
@@ -161,9 +161,4 @@ a {
     }
 }
 
-@media (max-width:744px) {
-    .section-top__heading {
-        padding-bottom: 0;
-    }
-}
 </style>

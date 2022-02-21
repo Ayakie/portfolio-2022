@@ -88,13 +88,8 @@ onMounted(() => {
     &__item {
         margin-left: 16px;
     }
-
-    &__navbtn {
-      display: none;
-      z-index: 100;
-    }
 }
-.header__navbtn {
+button.hamburger {
   display: none;
 }
 
@@ -139,10 +134,14 @@ onMounted(() => {
 }
 
 @media (max-width: 744px) {
-  .header__navbtn {
+  button.hamburger {
     display: inherit;
     z-index: 100;
   }
+  // .header__navbtn {
+  //   display: inherit;
+  //   z-index: 100;
+  // }
   .header__right {
     position: fixed;
     background: main.$bg-black;
