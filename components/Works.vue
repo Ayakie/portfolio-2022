@@ -133,8 +133,15 @@ onBeforeUnmount(() => {
     max-width: 90%;
 }
 
-.section-top__heading {
-    padding-bottom: clamp(32px, 6.5vh, 70px);
+.section-top {
+    display: grid;
+    
+    &__heading {
+        padding-bottom: clamp(32px, 6.5vh, 70px);
+    }
+    &__inner-content {
+        height: 70vh;
+    }
 }
 
 .wrapper {
@@ -161,4 +168,9 @@ a {
     }
 }
 
+@media (max-width:744px) {
+.section-top__heading {
+    padding-bottom: clamp(24px, 5vh, 70px);
+    }
+}
 </style>

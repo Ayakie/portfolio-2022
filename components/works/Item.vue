@@ -50,6 +50,10 @@
         width: 100%;
         height: clamp(220px, 37vh, 330px);
         text-align: center;
+
+        & img {
+            max-height: 100%;
+        }
     }
 
     &__title {
@@ -120,7 +124,6 @@
 
 @media (max-width: 744px) {
     .list-item {
-        width: 100vw;
         padding: 0 2rem;
 
         &__card {
@@ -141,6 +144,11 @@
             height: 80px;
         }
 
+    }
+}
+@media (max-width: 744px) {
+    .list-item {
+        width: 90vw;
     }
 }
 </style>
