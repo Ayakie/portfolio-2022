@@ -22,9 +22,18 @@ body {
 body::-webkit-scrollbar {
     display: none;
 }
+// 効かない
 .is-open body {
     position: fixed;
     overflow: hidden;
+}
+
+ul li{
+    text-indent: -1rem;
+    padding-left: 1rem;
+}
+ul {
+    list-style-position: inside;
 }
 
 html, div {
@@ -69,7 +78,7 @@ img {
     scroll-snap-align: start;
     min-height: 100vh;
     padding: $section-padding + $header-height 0;
-    // display: grid;
+    display: grid;
     
     &__heading {
         padding-top: $section-padding + $header-height;
@@ -294,7 +303,6 @@ $heading-smartphone: 24px;
     .section-top {
         &__heading {
             font-size: $heading-smartphone;
-            margin-bottom: 2rem;
         }
     }
     .section--imgtext {

@@ -26,7 +26,7 @@ const others = ref([
 <template>
     <section class="section-top" id="section--skills">
         <h1 class="section-top__heading">
-            Things I Can Do. I Love to Discuss and Shape Ideas.
+            Things I Can Do. I Love to <br class="desktop-hidden"> Discuss and Shape Ideas.
         </h1>
         <!-- paddingの影響でずれる -->
         <div class="">
@@ -51,7 +51,7 @@ const others = ref([
                 </div>
                 <div class="container__column column">
                     <div class="column__heading heading--sub">
-                        Front
+                        Fronted
                     </div>
                     <div class="column__content content">
                         <div class="content__icons">
@@ -88,7 +88,10 @@ const others = ref([
 
 .section-top {
     background: main.$bg-gray;
-    display: grid;
+    
+    &__heading {
+        padding-bottom: clamp(32px,6.5vh,70px)
+    }
 }
 %__column {
     padding: 0 20px;
@@ -131,6 +134,7 @@ const others = ref([
         margin-bottom: 16px;
         font-family: Monaco, Andale Mono, PT Mono;
         font-size: 14px;
+        text-align: center;
     }
 }
 
@@ -162,6 +166,11 @@ const others = ref([
             margin-right: 0;
             margin-bottom: 4px;
         }
+    }
+}
+@media(min-width: 744px) {
+    .desktop-hidden {
+        display: none;
     }
 }
 </style>

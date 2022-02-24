@@ -35,7 +35,7 @@ onBeforeUnmount(() => {
 <template>
 <div>
     <section class="section-top" id="section--contact">
-        <h1 class="section-top__heading">Feel Free to Get in Touch Me.</h1>
+        <h1 class="section-top__heading">Feel Free to Get in Touch.</h1>
         <div class="section-top__inner-content">
             <div class="sns-icons">
                 <a href="https://www.linkedin.com/in/akienakai1023/" target="_blank" class="sns-icons__icon">

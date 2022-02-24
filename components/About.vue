@@ -124,11 +124,12 @@ $circle-width-mb: 280px;
     transition: all 0.3s ease;
 }
 
-.section-top {
-    display: grid;
-}
-
 @media (max-width: 744px) {
+    .section-top {
+        &__heading {
+            padding-bottom: clamp(32px,6.5vh,70px)
+        }
+    }
     .container--about {
         flex-direction: column;
         align-items: center;

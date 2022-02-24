@@ -124,7 +124,7 @@
 
 @media (max-width: 744px) {
     .list-item {
-        padding: 0 2rem;
+        padding: 0 1rem;
 
         &__card {
             height: 200px;

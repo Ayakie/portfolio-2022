@@ -134,8 +134,7 @@ onBeforeUnmount(() => {
 }
 
 .section-top {
-    display: grid;
-    
+
     &__heading {
         padding-bottom: clamp(32px, 6.5vh, 70px);
     }

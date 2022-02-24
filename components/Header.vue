@@ -138,10 +138,6 @@ button.hamburger {
     display: inherit;
     z-index: 100;
   }
-  // .header__navbtn {
-  //   display: inherit;
-  //   z-index: 100;
-  // }
   .header__right {
     position: fixed;
     background: main.$bg-black;

@@ -17,6 +17,15 @@ body::-webkit-scrollbar {
   overflow: hidden;
 }
 
+ul li {
+  text-indent: -1rem;
+  padding-left: 1rem;
+}
+
+ul {
+  list-style-position: inside;
+}
+
 html, div {
   font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "Noto Sans", "Noto Sans JP", "Noto Sans Japanese", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   scroll-behavior: smooth;
@@ -52,6 +61,7 @@ img {
   scroll-snap-align: start;
   min-height: 100vh;
   padding: 54px 0;
+  display: grid;
 }
 .section-top__heading {
   padding-top: 54px;
@@ -218,7 +228,6 @@ img {
 @media (max-width: 744px) {
   .section-top__heading {
     font-size: 24px;
-    margin-bottom: 2rem;
   }
 
   .section--imgtext {
