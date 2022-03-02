@@ -10,7 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import PrevButton from '~~/components/parts/PrevButton.vue';
 
 onMounted(() => {
-    console.log('mounted')
+    // console.log('mounted')
     if (process.client) {
         gsap.registerPlugin(ScrollTrigger)
     }
